@@ -1,39 +1,69 @@
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
 let fullname;
 let age;
 let mail;
 let number;
 
-while (true) {
-    fullname = prompt("Nhập tên người dùng (không được để trống): ");
-    if (fullname.trim() !== "") break; // Điều kiện kiểm tra tên không trống
-    console.log("Tên không được để trống. Vui lòng nhập lại.");
+// Hàm để yêu cầu người dùng nhập dữ liệu
+function askForFullName() {
+    rl.question("Nhập tên người dùng (không được để trống): ", (input) => {
+        if (input.trim() !== "") {
+            fullname = input;
+            askForAge(); // Gọi hàm yêu cầu tuổi
+        } else {
+            console.log("Tên không được để trống. Vui lòng nhập lại.");
+            askForFullName(); // Gọi lại hàm nếu tên trống
+        }
+    });
 }
 
-while (true) {
-    age = prompt("Nhập tuổi của bạn: ");
-    if (parseInt(age) > 0 && !isNaN(age)) break; // Kiểm tra tuổi là số dương hợp lệ
-    console.log("Tuổi phải là một số dương. Vui lòng nhập lại.");
+function askForAge() {
+    rl.question("Nhập tuổi của bạn: ", (input) => {
+        age = parseInt(input);
+        if (age > 0) {
+            askForEmail(); // Gọi hàm yêu cầu email
+        } else {
+            console.log("Tuổi phải là một số dương. Vui lòng nhập lại.");
+            askForAge(); // Gọi lại hàm nếu tuổi không hợp lệ
+        }
+    });
 }
 
-while (true) {
-    mail = prompt("Nhập địa chỉ email của bạn: ");
-    if (mail.endsWith("@gmail.com")) break; // Kiểm tra đuôi email
-    console.log("Địa chỉ email phải có đuôi @gmail.com. Vui lòng nhập lại.");
+function askForEmail() {
+    rl.question("Nhập địa chỉ email của bạn: ", (input) => {
+        if (input.endsWith("@gmail.com")) {
+            mail = input;
+            askForPhone(); // Gọi hàm yêu cầu số điện thoại
+        } else {
+            console.log("Địa chỉ email phải có đuôi @gmail.com. Vui lòng nhập lại.");
+            askForEmail(); // Gọi lại hàm nếu email không hợp lệ
+        }
+    });
 }
 
-while (true) {
-    number = prompt("Nhập số điện thoại của bạn: ");
-    if (number.length === 10 && !isNaN(number)) break; // Kiểm tra số điện thoại đúng 10 số
-    console.log("Số điện thoại phải có 10 chữ số. Vui lòng nhập lại.");
+function askForPhone() {
+    rl.question("Nhập số điện thoại của bạn: ", (input) => {
+        if (input.length === 10 && !isNaN(input)) {
+            number = input;
+            printResult(); // Gọi hàm in kết quả
+        } else {
+            console.log("Số điện thoại phải có 10 chữ số. Vui lòng nhập lại.");
+            askForPhone(); // Gọi lại hàm nếu số điện thoại không hợp lệ
+        }
+    });
 }
 
-// Phân loại tuổi
-const ageGroup = parseInt(age) < 15 ? "nhỏ" : "người lớn"; // Sử dụng const cho biến không thay đổi
+function printResult() {
+    const ageGroup = age < 15 ? "nhỏ" : "người lớn";
+    console.log(`\nChào ${fullname},\nBạn ${age} tuổi, thuộc nhóm ${ageGroup}.\nĐịa chỉ mail của bạn là: ${mail}.\nSố điện thoại của bạn là: ${number}.`);
+    rl.close(); // Đóng giao diện readline
+}
 
-// In kết quả ra màn hình với định dạng đẹp
-console.log(`
-Chào ${fullname},
-Bạn ${age} tuổi, thuộc nhóm ${ageGroup}.
-Địa chỉ mail của bạn là: ${mail}.
-Số điện thoại của bạn là: ${number}.
-`);
+// Bắt đầu chương trình
+askForFullName();
