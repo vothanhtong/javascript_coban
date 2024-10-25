@@ -145,3 +145,84 @@ function includesValue(arr, value) {
         return str.split(char).length - 1;
     }
 
+//  TÍNH TỔNG 
+
+
+// 1. Tính tổng hai số: Viết hàm nhận vào hai số và trả về tổng của chúng.
+   
+   function sumTwoNumbers(a, b) {
+       return a + b;
+   }
+   
+
+// 2. Tính tổng của mảng số: Viết hàm nhận vào một mảng các số và trả về tổng của các số trong mảng.
+   
+   function sumArray(arr) {
+       return arr.reduce((total, num) => total + num, 0);
+   }
+   
+
+// 3. Tính tổng các số chẵn trong mảng: Viết hàm nhận vào một mảng và trả về tổng các số chẵn.
+   
+   function sumEvenNumbers(arr) {
+       return arr.filter(num => num % 2 === 0).reduce((total, num) => total + num, 0);
+   }
+   
+
+// 4. Tính tổng các số lẻ trong mảng: Viết hàm nhận vào một mảng và trả về tổng các số lẻ.
+   
+   function sumOddNumbers(arr) {
+       return arr.filter(num => num % 2 !== 0).reduce((total, num) => total + num, 0);
+   }
+   
+
+// 5. **Tính tổng các số từ 1 đến n**: Viết hàm nhận vào một số n và trả về tổng của tất cả các số từ 1 đến n.
+   
+   function sumUpToN(n) {
+       return (n * (n + 1)) / 2;
+   }
+   
+
+// 6. Tính tổng các số trong chuỗi: Viết hàm nhận vào một chuỗi các số cách nhau bằng dấu phẩy và trả về tổng các số.
+   
+   function sumStringNumbers(str) {
+       return str.split(',').map(Number).reduce((total, num) => total + num, 0);
+   }
+  
+
+// 7. Tính tổng các số trong một đối tượng: Viết hàm nhận vào một đối tượng có các thuộc tính là số và trả về tổng các giá trị.
+   
+   function sumObjectValues(obj) {
+       return Object.values(obj).reduce((total, num) => total + num, 0);
+   }
+   
+
+// 8. Tính tổng các số nguyên tố trong mảng: Viết hàm nhận vào một mảng và trả về tổng các số nguyên tố.
+   
+   function isPrime(num) {
+       if (num < 2) return false;
+       for (let i = 2; i <= Math.sqrt(num); i++) {
+           if (num % i === 0) return false;
+       }
+       return true;
+   }
+
+   function sumPrimeNumbers(arr) {
+       return arr.filter(isPrime).reduce((total, num) => total + num, 0);
+   }
+   
+
+// 9. Tính tổng của hai mảng: Viết hàm nhận vào hai mảng và trả về tổng các số trong cả hai mảng.
+   
+   function sumTwoArrays(arr1, arr2) {
+       return sumArray(arr1) + sumArray(arr2);
+   }
+   
+
+// 10. Tính tổng các số có chỉ số chẵn trong mảng : Viết hàm nhận vào một mảng và trả về tổng các số ở vị trí chỉ số chẵn.
+    
+    function sumEvenIndex(arr) {
+        return arr.filter((_, index) => index % 2 === 0).reduce((total, num) => total + num, 0);
+    }
+    
+
