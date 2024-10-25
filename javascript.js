@@ -67,3 +67,5 @@ function printResult() {
 
 // Bắt đầu chương trình
 askForFullName();
+
+hello 
