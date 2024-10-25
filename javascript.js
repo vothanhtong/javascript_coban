@@ -67,3 +67,81 @@
 
 // Mỗi bìa có thể thiết kế với tiêu đề chính, một hình ảnh biểu trưng đơn giản như biểu 
 // tượng của JavaScript (chữ "JS" trong một hình lục giác màu vàng), và nội dung mô tả ngắn để giúp học viên nắm bắt chủ đề của tài liệu.
+
+
+
+
+// 1. Tính tổng hai số: Viết một hàm nhận vào hai số và trả về tổng của chúng.
+
+
+function sum(a, b) {
+    return a + b;
+}
+
+
+// 2.Kiểm tra số chẵn lẻ: Viết một hàm nhận vào một số và kiểm tra xem số đó là chẵn hay lẻ.
+
+   function isEven(num) {
+       return num % 2 === 0;
+}
+
+
+// 3.Đảo ngược chuỗi: Viết một hàm nhận vào một chuỗi và trả về chuỗi đó sau khi đã đảo ngược.
+  
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+
+
+// 4. Tìm số lớn nhất trong mảng: Viết một hàm nhận vào một mảng số và trả về số lớn nhất trong mảng đó.
+   
+function findMax(arr) {
+    return Math.max(...arr);
+}
+   
+
+// 5.Kiểm tra chuỗi Palindrome: Viết một hàm kiểm tra xem một chuỗi có phải là palindrome hay không.
+
+function isPalindrome(str) {
+    return str === str.split('').reverse().join('');
+}
+
+
+// 6. Tính giai thừa : Viết một hàm tính giai thừa của một số nguyên dương.
+  
+function factorial(n) {
+    if (n === 0) return 1;
+    return n * factorial(n - 1);
+}
+
+
+// 7. Sắp xếp mảng: Viết một hàm nhận vào một mảng số và trả về mảng đó đã được sắp xếp theo thứ tự tăng dần.
+   
+function sortArray(arr) {
+    return arr.sort((a, b) => a - b);
+}
+
+
+// 8. Tìm kiếm trong mảng: Viết một hàm nhận vào một mảng và một giá trị, và kiểm tra xem giá trị đó có tồn tại trong mảng hay không.
+  
+function includesValue(arr, value) {
+    return arr.includes(value);
+}
+
+
+// 9.Tạo mảng Fibonacci: Viết một hàm tạo ra dãy số Fibonacci đến một số n cho trước.
+
+   function fibonacci(n) {
+       let fib = [0, 1];
+       for (let i = 2; i < n; i++) {
+           fib[i] = fib[i - 1] + fib[i - 2];
+       }
+       return fib.slice(0, n);
+   }
+
+// 10. Đếm số lần xuất hiện của một ký tự trong chuỗi: Viết một hàm đếm số lần một ký tự xuất hiện trong chuỗi.
+
+    function countChar(str, char) {
+        return str.split(char).length - 1;
+    }
+
