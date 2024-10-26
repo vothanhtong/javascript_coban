@@ -69,12 +69,12 @@
 // Khai báo các biến với các kiểu dữ liệu khác nhau và sử dụng `typeof` để kiểm tra kiểu dữ liệu của chúng.
 
 
-let age = 30; // Number
-let name = "Alice"; // String
-let isStudent = false; // Boolean
-let x; // Undefined
-let y = null; // Null
-let uniqueID = Symbol('id'); // Symbol
+// let age = 30; // Number
+// let name = "Alice"; // String
+// let isStudent = false; // Boolean
+// let x; // Undefined
+// let y = null; // Null
+// let uniqueID = Symbol('id'); // Symbol
 
 console.log(typeof age); // "number"
 console.log(typeof name); // "string"
@@ -133,4 +133,41 @@ if (student.age >= 18) {
     console.log(`${student.name} chưa đủ tuổi để tham gia khóa học.`);
 }
 
+
+// Trong JavaScript, biến (variable) là cách để lưu trữ và quản lý dữ liệu. Để khai báo biến trong JavaScript, bạn có thể sử dụng ba từ khóa chính: `var`, `let`, và `const`. Dưới đây là các khái niệm cơ bản về từng loại:
+
+// 1. var: 
+//    - Đây là cách khai báo biến cũ trong JavaScript.
+//    - Phạm vi của `var` là toàn cục (global) nếu được khai báo bên ngoài hàm, và cục bộ (local) nếu được khai báo trong hàm.
+//    - var có đặc điểm bị hoisted (được đưa lên đầu phạm vi trước khi mã thực sự được thực thi), tức là bạn có thể sử dụng biến trước khi khai báo.
+   
+   
+   var x = 10;
+   console.log(x); // 10
+
+
+// 2. let:
+//    - Giới thiệu trong ES6 (ECMAScript 2015), `let` giúp khai báo biến có phạm vi khối (block scope). Điều này có nghĩa là biến chỉ tồn tại trong khối `{}` mà nó được khai báo.
+//    - Không bị hoisted giống `var` và không thể truy cập trước khi khai báo.
+
+   
+   let y = 20;
+   if (true) {
+       let z = 30;
+       console.log(z); // 30
+   }
+   console.log(z); // Lỗi, z không tồn tại ngoài khối
+   
+
+// 3. const:
+//    - Cũng được giới thiệu trong ES6, `const` khai báo một hằng số, nghĩa là giá trị của biến không thể thay đổi sau khi đã được gán.
+//    - Cũng có phạm vi khối như `let`.
+//    - Tuy nhiên, với các kiểu dữ liệu phức tạp như đối tượng (objects) hoặc mảng (arrays), các thuộc tính bên trong có thể thay đổi, nhưng không thể gán lại biến đó.
+
+   
+   const PI = 3.14;
+   // PI = 3.14159; // Lỗi, không thể gán lại hằng số
+
+   const myArray = [1, 2, 3];
+   myArray.push(4); // Hợp lệ, thay đổi nội dung mảng
 
