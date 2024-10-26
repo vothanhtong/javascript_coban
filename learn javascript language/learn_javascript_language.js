@@ -134,6 +134,12 @@ if (student.age >= 18) {
 }
 
 
+
+
+// Js có 7 kiểu dữ liệu cơ bản
+// + Primitive Data Types ( Nguyên Thủy ): Number, String, Boolean, Undefined, Null,Symbol, BigInt
+// + Reference Data Type ( Phức hợp ): Object, Array, Function
+// Một nơi để lưu trữ giá trị. Biến được khai báo bằng cách sử dụng các từ khóa var, let, hoặc const
 // Trong JavaScript, biến (variable) là cách để lưu trữ và quản lý dữ liệu. Để khai báo biến trong JavaScript, bạn có thể sử dụng ba từ khóa chính: `var`, `let`, và `const`. Dưới đây là các khái niệm cơ bản về từng loại:
 
 // 1. var: 
@@ -171,3 +177,165 @@ if (student.age >= 18) {
    const myArray = [1, 2, 3];
    myArray.push(4); // Hợp lệ, thay đổi nội dung mảng
 
+
+
+//                                                                                        Operators
+// 1. Arithmetic Operators ( Toán tử Số học).
+// 2. Assignment Operators ( Toán tử gán ).
+// 3. Comparison Operators ( Toán tử so sánh ).
+// 4. Logical Operators ( Toán tử so logic ).
+// 5. Ternary Operator ( Toán tử điều kiện ).
+// 6. String Operators ( Toán tử chuỗi ).
+// 7. Type Operators ( Toán tử kiểu ).
+// 8.  Toán Tử Nullish Coalescing
+
+
+
+// 1. Toán tử số học (Arithmetic Operators)
+
+// Các toán tử số học thực hiện các phép tính số học như cộng, trừ, nhân, chia, v.v.
+
+// | Toán tử | Miêu tả      |
+// |---------|--------------|
+// | `+`     | Cộng         |
+// | `-`     | Trừ          |
+// | `*`     | Nhân         |
+// | `/`     | Chia         |
+// | `%`     | Chia lấy dư  |
+// | `**`    | Lũy thừa     |
+
+// Bài tập:
+
+let a = 10;
+let b = 3;
+console.log(a + b);  // 13
+console.log(a - b);  // 7
+console.log(a * b);  // 30
+console.log(a / b);  // 3.3333...
+console.log(a % b);  // 1 (dư sau phép chia)
+console.log(a ** b); // 1000 (10 lũy thừa 3)
+
+
+// 2. Toán tử gán (Assignment Operators)
+
+// Toán tử gán dùng để gán giá trị cho biến.
+
+// | Toán tử | Miêu tả                  |
+// |---------|--------------------------|
+// | `=`     | Gán                      |
+// | `+=`    | Cộng và gán               |
+// | `-=`    | Trừ và gán                |
+// | `*=`    | Nhân và gán               |
+// | `/=`    | Chia và gán               |
+// | `%=`    | Chia lấy dư và gán        |
+
+// Bài tập:
+
+let x = 5;
+x += 3; // x = x + 3
+console.log(x); // 8
+x *= 2; // x = x * 2
+console.log(x); // 16
+x %= 7; // x = x % 7
+console.log(x); // 2
+
+
+// 3. Toán tử so sánh (Comparison Operators)
+
+// Dùng để so sánh hai giá trị và trả về `true` hoặc `false`.
+
+// | Toán tử | Miêu tả                   |
+// |---------|---------------------------|
+// | `==`    | Bằng                      |
+// | `===`   | Bằng nghiêm ngặt (cả kiểu)|
+// | `!=`    | Khác                      |
+// | `!==`   | Khác nghiêm ngặt          |
+// | `>`     | Lớn hơn                   |
+// | `<`     | Nhỏ hơn                   |
+// | `>=`    | Lớn hơn hoặc bằng         |
+// | `<=`    | Nhỏ hơn hoặc bằng         |
+
+// Bài tập:
+
+let m = 10;
+let n = '10';
+console.log(m == n);  // true (so sánh giá trị)
+console.log(m === n); // false (so sánh giá trị và kiểu)
+console.log(m != n);  // false
+console.log(m !== n); // true
+console.log(m > 5);   // true
+console.log(m <= 10); // true
+
+// 4. Toán tử logic (Logical Operators)
+
+// Dùng để thực hiện các phép toán logic.
+
+// | Toán tử | Miêu tả         |
+// |---------|-----------------|
+// | `&&`    | AND             |
+// | `||`    | OR              |
+// | `!`     | NOT             |
+
+// Bài tập:
+
+let p = true;
+let q = false;
+console.log(p && q);  // false (vì q là false)
+console.log(p || q);  // true (vì p là true)
+console.log(!p);      // false (đảo ngược giá trị của p)
+
+// 5. Toán tử điều kiện (Ternary Operator)
+
+// Toán tử điều kiện kiểm tra một điều kiện và trả về một trong hai giá trị.
+
+// Cú pháp:
+
+condition ? value_if_true : value_if_false;
+
+// Bài tập:
+
+let age = 18;
+let isAdult = (age >= 18) ? "Đủ tuổi" : "Chưa đủ tuổi";
+console.log(isAdult); // Đủ tuổi
+
+
+//  6. Toán tử chuỗi (String Operators)
+
+// Toán tử `+` được dùng để nối chuỗi.
+
+// Bài tập:
+
+let firstName = "Võ";
+let lastName = "Tòng";
+let fullName = firstName + " " + lastName;
+console.log(fullName); // Võ Tòng
+
+
+// 7. Toán tử kiểu (Type Operators)
+
+// Dùng để kiểm tra kiểu dữ liệu của một biến.
+
+// | Toán tử    | Miêu tả                    |
+// |------------|----------------------------|
+// | `typeof`   | Trả về kiểu của biến       |
+// | `instanceof`| Kiểm tra một đối tượng có phải là thể hiện của một lớp nào đó không |
+
+// Bài tập:
+
+let num = 42;
+let str = "Hello";
+console.log(typeof num);  // "number"
+console.log(typeof str);  // "string"
+console.log(str instanceof String); // false (vì str là kiểu dữ liệu cơ bản, không phải object)
+
+
+//  8. Toán tử Nullish Coalescing (??)
+
+// Toán tử này trả về giá trị đầu tiên không phải `null` hoặc `undefined`.
+
+Bài tập:
+
+let user;
+let defaultName = "Guest";
+let name = user ?? defaultName;
+console.log(name); // Guest (vì user là undefined)
