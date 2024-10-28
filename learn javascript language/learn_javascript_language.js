@@ -333,7 +333,7 @@ console.log(str instanceof String); // false (vì str là kiểu dữ liệu cơ
 
 // Toán tử này trả về giá trị đầu tiên không phải `null` hoặc `undefined`.
 
-Bài tập:
+// Bài tập:
 
 let user;
 let defaultName = "Guest";
