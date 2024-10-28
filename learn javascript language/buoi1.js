@@ -1,5 +1,3 @@
-
-
 // // Hướng Dẫn Kiểu Dữ Liệu và Toán Tử Trong JavaScript
 
 // // 1. Kiểu Dữ Liệu Cơ Bản
