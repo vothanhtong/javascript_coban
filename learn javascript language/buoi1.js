@@ -176,7 +176,7 @@
 // //  4.2. Toán Tử Gán
 // javascript
 // let x = 5;
-// x += 3; // x = x + 3
+// x += 3; // x = x + 3S
 // console.log(x); // 8
 
 
