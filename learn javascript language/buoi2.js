@@ -56,7 +56,22 @@ if (score >= 90) {
 
 
 // Bài Tập:
-// - Viết một chương trình kiểm tra tuổi của một người. Nếu tuổi nhỏ hơn 18, in ra "Chưa đủ tuổi"; nếu từ 18 đến 60, in ra "Người lớn"; còn nếu lớn hơn 60, in ra "Người cao tuổi".
+// - Viết một chương trình kiểm tra tuổi của một người. Nếu tuổi nhỏ hơn 18,
+//  in ra "Chưa đủ tuổi"; nếu từ 18 đến 60, in ra "Người lớn"; còn nếu lớn hơn 60, in ra "Người cao tuổi".
+// Nhập tuổi từ người dùng
+let age = prompt("Nhập tuổi của bạn:");
+
+// Chuyển đổi age sang kiểu số
+age = Number(age);
+
+// Kiểm tra điều kiện và in ra thông báo
+if (age < 18) {
+    console.log("Chưa đủ tuổi");
+} else if (age >= 18 && age <= 60) {
+    console.log("Người lớn");
+} else {
+    console.log("Người cao tuổi");
+}
 
 // 2. Vòng Lặp
 
@@ -75,6 +90,14 @@ while (j <= 5) {
 // Bài Tập:
 // - Viết một chương trình in ra bảng cửu chương từ 1 đến 10.
 
+for (let i = 1; i <= 10; i++) {
+    console.log(`Bảng cửu chương ${i}:`);
+    for (let j = 1; j <= 10; j++) {
+        console.log(`${i} x ${j} = ${i * j}`);
+    }
+    console.log("\n"); // Thêm dòng trống giữa các bảng
+}
+
 //  3. Hàm
 
 // Ví dụ:
@@ -89,6 +112,14 @@ greet("Alice");
 // Bài Tập:
 
 // - Viết một hàm tính tổng hai số và trả về kết quả.
+
+function tinhTong(a, b) {
+    return a + b;
+}
+
+// Ví dụ sử dụng
+let ketQua = tinhTong(5, 7);
+console.log("Tổng của 5 và 7 là:", ketQua);
 
 // 4. Mảng và Đối Tượng
 
@@ -108,6 +139,22 @@ console.log(person.name); // "John"
 // Bài Tập:
 // - Tạo một mảng chứa các tên của bạn bè. Viết một hàm nhận vào tên và kiểm tra xem tên đó có trong mảng hay không.
 
+// Mảng chứa tên của bạn bè
+const tenBanBe = ["An", "Bình", "Cường", "Dũng", "Hà"];
+
+// Hàm kiểm tra tên
+function kiemTraTen(ten) {
+    if (tenBanBe.includes(ten)) {
+        return `${ten} có trong danh sách bạn bè.`;
+    } else {
+        return `${ten} không có trong danh sách bạn bè.`;
+    }
+}
+
+// Ví dụ sử dụng
+console.log(kiemTraTen("An"));    // An có trong danh sách bạn bè.
+console.log(kiemTraTen("Mai"));   // Mai không có trong danh sách bạn bè.
+
 // 5. Xử Lý Lỗi
 
 
@@ -120,6 +167,21 @@ try {
 
 // Bài Tập:
 // - Viết một hàm chia hai số và sử dụng `try...catch` để xử lý trường hợp chia cho 0.
+function chiaHaiSo(a, b) {
+    try {
+        if (b === 0) {
+            throw new Error("Không thể chia cho 0");
+        }
+        return a / b;
+    } catch (error) {
+        return error.message;
+    }
+}
+
+// Ví dụ sử dụng
+console.log(chiaHaiSo(10, 2));   // Kết quả: 5
+console.log(chiaHaiSo(10, 0));   // Kết quả: Không thể chia cho 0
+
 
 // 6. DOM
 
@@ -131,6 +193,24 @@ document.getElementById("myButton").addEventListener("click", function() {
 
 // Bài Tập:
 // - Tạo một trang HTML với một nút. Khi nhấn nút, một thông báo "Nút đã được nhấn" sẽ hiển thị.
+// <!DOCTYPE html>
+// <html lang="vi">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Thông báo Nút Nhấn</title>
+//     <script>
+//         function hienThiThongBao() {
+//             alert("Nút đã được nhấn");
+//         }
+//     </script>
+// </head>
+// <body>
+//     <h1>Nhấn vào nút bên dưới</h1>
+//     <button onclick="hienThiThongBao()">Nhấn vào đây</button>
+// </body>
+// </html>
+
 
 // 7. Promise và Async/Await
 
@@ -149,13 +229,133 @@ fetchData().then(data => console.log(data));
 
 // Bài Tập:
 // - Viết một hàm async để lấy dữ liệu từ một promise và in ra kết quả.
+// Hàm async để lấy dữ liệu từ một Promise
+async function layDuLieu() {
+    // Giả sử có một Promise trả về dữ liệu sau 2 giây
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Dữ liệu đã được lấy thành công");
+        }, 2000);
+    });
+
+    try {
+        // Đợi promise hoàn thành và lấy dữ liệu
+        const ketQua = await promise;
+        console.log(ketQua); // In ra kết quả
+    } catch (error) {
+        console.error("Đã xảy ra lỗi:", error);
+    }
+}
+
+// Gọi hàm layDuLieu
+layDuLieu();
 
 // 8. Bài Tập Tổng Hợp
 
 // - Tạo một ứng dụng quản lý danh sách việc cần làm. Người dùng có thể thêm, xóa và hiển thị danh sách việc cần làm.
 // - Sử dụng DOM để hiển thị danh sách và các nút để thao tác với nó.
 
-//  Hướng Dẫn Thực Hiện Bài Tập
-// - Hãy thử làm từng bài tập một, lưu ý đến các lỗi có thể xảy ra và cách xử lý chúng.
-// - Sau khi hoàn thành, nếu bạn gặp khó khăn, hãy hỏi để được giải đáp!
+// <!DOCTYPE html>
+// <html lang="vi">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Quản Lý Danh Sách Việc Cần Làm</title>
+//     <style>
+//         body {
+//             font-family: Arial, sans-serif;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             height: 100vh;
+//             margin: 0;
+//             background-color: #f3f4f6;
+//         }
+//         .todo-container {
+//             width: 300px;
+//             padding: 20px;
+//             background-color: #ffffff;
+//             border-radius: 8px;
+//             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//         }
+//         h1 {
+//             text-align: center;
+//             font-size: 1.5em;
+//             color: #333;
+//         }
+//         input[type="text"] {
+//             width: 100%;
+//             padding: 10px;
+//             margin: 10px 0;
+//             border-radius: 4px;
+//             border: 1px solid #ddd;
+//         }
+//         button {
+//             width: 100%;
+//             padding: 10px;
+//             background-color: #4CAF50;
+//             color: #fff;
+//             border: none;
+//             border-radius: 4px;
+//             cursor: pointer;
+//             font-size: 1em;
+//         }
+//         button:hover {
+//             background-color: #45a049;
+//         }
+//         ul {
+//             list-style-type: none;
+//             padding: 0;
+//         }
+//         li {
+//             display: flex;
+//             justify-content: space-between;
+//             padding: 10px;
+//             border: 1px solid #ddd;
+//             margin-top: 5px;
+//             border-radius: 4px;
+//         }
+//         .delete-btn {
+//             background-color: #e74c3c;
+//             color: #fff;
+//             border: none;
+//             border-radius: 4px;
+//             padding: 5px;
+//             cursor: pointer;
+//         }
+//     </style>
+// </head>
+// <body>
+//     <div class="todo-container">
+//         <h1>Danh Sách Việc Cần Làm</h1>
+//         <input type="text" id="todo-input" placeholder="Nhập việc cần làm...">
+//         <button onclick="themCongViec()">Thêm</button>
+//         <ul id="todo-list"></ul>
+//     </div>
 
+//     <script>
+//         // Hàm thêm công việc vào danh sách
+//         function themCongViec() {
+//             const input = document.getElementById("todo-input");
+//             const danhSach = document.getElementById("todo-list");
+//             const congViec = input.value.trim();
+
+//             if (congViec !== "") {
+//                 const li = document.createElement("li");
+//                 li.innerHTML = `
+//                     <span>${congViec}</span>
+//                     <button class="delete-btn" onclick="xoaCongViec(this)">Xóa</button>
+//                 `;
+//                 danhSach.appendChild(li);
+//                 input.value = ""; // Xóa nội dung trong ô input sau khi thêm
+//             }
+//         }
+
+//         // Hàm xóa công việc khỏi danh sách
+//         function xoaCongViec(button) {
+//             const li = button.parentElement;
+//             li.remove();
+//         }
+//     </script>
+// </body>
+// </html>
