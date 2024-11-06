@@ -68,12 +68,11 @@ for (let i = 0; i < 3; i++) {
     drawTree(ctx, x, y);
 }
 
-
 // Hướng dẫn sử dụng
-// 1. **Mở trình duyệt**: Mở bất kỳ trình duyệt nào (Chrome, Firefox, v.v.).
-// 2. **Mở Console**: Nhấn F12 hoặc chuột phải vào trang và chọn "Inspect", sau đó chuyển sang tab "Console".
-// 3. **Dán mã vào Console**: Sao chép và dán mã trên vào console và nhấn Enter.
-//  Giải thích mã
-// - **Vẽ nhiều bông hoa**: Sử dụng vòng lặp để vẽ ngẫu nhiên 5 bông hoa ở các vị trí khác nhau trên canvas.
-// - **Vẽ cỏ**: Sử dụng vòng lặp để vẽ 80 thanh cỏ ở đáy canvas.
-// - **Vẽ cây**: Sử dụng vòng lặp để vẽ 3 cây ở các vị trí ngẫu nhiên trên canvas.
+// 1. Mở trình duyệt: Mở bất kỳ trình duyệt nào (Chrome, Firefox, v.v.).
+// 2. Mở Console: Nhấn F12 hoặc chuột phải vào trang và chọn "Inspect", sau đó chuyển sang tab "Console".
+// 3. Dán mã vào Console: Sao chép và dán mã trên vào console và nhấn Enter.
+//Giải thích mã
+//-Vẽ nhiều bông hoa: Sử dụng vòng lặp để vẽ ngẫu nhiên 5 bông hoa ở các vị trí khác nhau trên canvas.
+//-Vẽ cỏ: Sử dụng vòng lặp để vẽ 80 thanh cỏ ở đáy canvas.
+//-Vẽ cây: Sử dụng vòng lặp để vẽ 3 cây ở các vị trí ngẫu nhiên trên canvas.

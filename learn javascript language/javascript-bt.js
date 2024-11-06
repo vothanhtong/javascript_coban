@@ -1,5 +1,3 @@
-//Dưới đây là lộ trình học JavaScript đã được bỏ dấu **:
-
 // 1. Tổng quan về JavaScript  
 // - Tìm hiểu JavaScript là gì, vai trò của nó trong lập trình web và sự khác biệt giữa JavaScript với các ngôn ngữ khác như HTML và CSS.
 
