@@ -1,11 +1,16 @@
-
-// Tạo một canvas
+// Tạo và thiết lập canvas
 const canvas = document.createElement('canvas');
 canvas.width = 800;
 canvas.height = 400;
 document.body.appendChild(canvas);
 
 const ctx = canvas.getContext('2d');
+
+// Hàm vẽ nền trời
+function drawSky(ctx) {
+    ctx.fillStyle = 'skyblue';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
 
 // Hàm vẽ cánh hoa
 function drawFlower(ctx, x, y, petalCount, petalLength, petalWidth) {
@@ -47,32 +52,75 @@ function drawTree(ctx, x, y) {
     ctx.fill();
 }
 
-// Vẽ nhiều bông hoa
-for (let i = 0; i < 5; i++) {
-    const x = Math.random() * 800;
-    const y = Math.random() * 200 + 200;
-    drawFlower(ctx, x, y, 8, 50, 15);
+// Hàm vẽ cảnh toàn bộ
+function drawScene() {
+    drawSky(ctx);
+
+    // Vẽ nhiều bông hoa
+    for (let i = 0; i < 5; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * 200 + 200;
+        drawFlower(ctx, x, y, 8, 50, 15);
+    }
+
+    // Vẽ cỏ
+    for (let i = 0; i < 80; i++) {
+        const x = Math.random() * canvas.width;
+        const y = 350; // Vị trí cỏ
+        drawGrass(ctx, x, y);
+    }
+
+    // Vẽ cây
+    for (let i = 0; i < 3; i++) {
+        const x = Math.random() * canvas.width;
+        const y = 300; // Vị trí thân cây
+        drawTree(ctx, x, y);
+    }
 }
 
-// Vẽ cỏ
-for (let i = 0; i < 80; i++) {
-    const x = Math.random() * 800;
-    const y = 350; // Vị trí cỏ
-    drawGrass(ctx, x, y);
+// Gọi hàm vẽ cảnh
+drawScene();
+
+
+// Hàm tính toán
+function calculate() {
+    const operator = prompt("Nhập phép tính (+, -, *, /): ");
+    const num1 = parseFloat(prompt("Nhập số thứ nhất: "));
+    const num2 = parseFloat(prompt("Nhập số thứ hai: "));
+
+    // Kiểm tra đầu vào có hợp lệ không
+    if (isNaN(num1) || isNaN(num2)) {
+        alert("Vui lòng nhập hai số hợp lệ.");
+        return;
+    }
+
+    let result;
+
+    // Thực hiện tính toán dựa trên phép tính đã chọn
+    switch (operator) {
+        case "+":
+            result = num1 + num2;
+            break;
+        case "-":
+            result = num1 - num2;
+            break;
+        case "*":
+            result = num1 * num2;
+            break;
+        case "/":
+            if (num2 === 0) {
+                result = "Lỗi: Không thể chia cho 0";
+            } else {
+                result = num1 / num2;
+            }
+            break;
+        default:
+            result = "Phép tính không hợp lệ";
+    }
+
+    // Hiển thị kết quả
+    alert("Kết quả: " + result);
 }
 
-// Vẽ cây
-for (let i = 0; i < 3; i++) {
-    const x = Math.random() * 800;
-    const y = 300; // Vị trí thân cây
-    drawTree(ctx, x, y);
-}
-
-// Hướng dẫn sử dụng
-// 1. Mở trình duyệt: Mở bất kỳ trình duyệt nào (Chrome, Firefox, v.v.).
-// 2. Mở Console: Nhấn F12 hoặc chuột phải vào trang và chọn "Inspect", sau đó chuyển sang tab "Console".
-// 3. Dán mã vào Console: Sao chép và dán mã trên vào console và nhấn Enter.
-//Giải thích mã
-//-Vẽ nhiều bông hoa: Sử dụng vòng lặp để vẽ ngẫu nhiên 5 bông hoa ở các vị trí khác nhau trên canvas.
-//-Vẽ cỏ: Sử dụng vòng lặp để vẽ 80 thanh cỏ ở đáy canvas.
-//-Vẽ cây: Sử dụng vòng lặp để vẽ 3 cây ở các vị trí ngẫu nhiên trên canvas.
+// Gọi hàm calculate để thực hiện phép tính
+calculate();
