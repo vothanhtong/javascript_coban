@@ -36,8 +36,8 @@ for (let i = 1; i <= 20; i++) {
 
 // 5. Kiểm tra mật khẩu
 
-let password = prompt("Nhập mật khẩu của bạn:");
-if (password === "javascript") {
+let mk = prompt("Nhập mật khẩu của bạn:");
+if (mk  === "javascript") {
     console.log("Mật khẩu đúng");
 } else {
     console.log("Mật khẩu sai");
@@ -53,8 +53,8 @@ console.log("Diện tích hình tròn:", pi * r * r);
 
 //  7. Kiểm tra xem một năm có phải là năm nhuận không
 
-let year = parseInt(prompt("Nhập vào số năm:"));
-if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+let namm = parseInt(prompt("Nhập vào số năm:"));
+if ((namm % 4 === 0 && year % 100 !== 0) || namm % 400 === 0) {
     console.log("Đây là năm nhuận");
 } else {
     console.log("Đây không phải là năm nhuận");
@@ -63,10 +63,10 @@ if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
 
 // 8. Kiểm tra số nguyên tố
 
-let num = parseInt(prompt("Nhập một số nguyên dương:"));
+let numm = parseInt(prompt("Nhập một số nguyên dương:"));
 let isPrime = true;
-for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) {
+for (let i = 2; i <= Math.sqrt(numm); i++) {
+    if (numm % i === 0) {
         isPrime = false;
         break;
     }
@@ -298,8 +298,8 @@ if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
 // 3. Đánh giá điểm
 // Mô tả: Nhập điểm của học sinh và đánh giá xem học sinh đậu hay rớt (điểm >= 50 thì đậu).
 
-let score = parseInt(prompt("Nhập điểm của bạn: "));
-if (score >= 50) {
+let scores = parseInt(prompt("Nhập điểm của bạn: "));
+if (scores >= 50) {
     console.log("Bạn đậu!");
 } else {
     console.log("Bạn rớt!");
