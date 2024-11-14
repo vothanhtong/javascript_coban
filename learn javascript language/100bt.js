@@ -533,5 +533,3 @@ for (let i = 1; i <= z; i++) {
           }
       }
       console.log(n + (isPrimee ? " is a prime number." : " is not a prime number."));
-
-   
