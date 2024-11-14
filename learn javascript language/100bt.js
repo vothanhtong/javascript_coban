@@ -393,53 +393,37 @@ if (height < 150) {
 // BÀI 2:                                                        VÒNG LẶP FOR 
 
 
-//  1. In các số từ 1 đến 10
+// BÀI 1: In các số từ 1 đến 10
 //    Sử dụng vòng lặp `for` để in ra các số từ 1 đến 10.
-
    for (let i = 1; i <= 10; i++) {
        console.log(i);
    }
    
-
-//  2. Tính tổng các số từ 1 đến 100
+// BÀI 2: Tính tổng các số từ 1 đến 100
 //    Dùng vòng lặp `for` để tính tổng các số từ 1 đến 100.
-
-
    let sum = 0;
    for (let i = 1; i <= 100; i++) {
        sum += i;
    }
-   console.log(sum);
+   console.log("Total sum from 1 to 100:", sum);
    
-
-
-//  3. In các số chẵn từ 1 đến 20
+// BÀI 3: In các số chẵn từ 1 đến 20
 //    Sử dụng vòng lặp `for` để in ra các số chẵn từ 1 đến 20.
-
-  
    for (let i = 2; i <= 20; i += 2) {
        console.log(i);
    }
-
-
-
-//  4. Đảo ngược một chuỗi
+   
+// BÀI 4: Đảo ngược một chuỗi
 //    Cho một chuỗi, sử dụng vòng lặp `for` để đảo ngược chuỗi đó.
-
-  
    let str = "hello";
    let reversed = "";
    for (let i = str.length - 1; i >= 0; i--) {
        reversed += str[i];
    }
-   console.log(reversed);
+   console.log("Reversed string:", reversed);
    
-
-
-//  5. Tìm số nguyên tố từ 1 đến 50
+// BÀI 5: Tìm số nguyên tố từ 1 đến 50
 //    Sử dụng vòng lặp `for` để tìm và in ra tất cả các số nguyên tố từ 1 đến 50.
-
-   
    for (let i = 2; i <= 50; i++) {
        let isPrime = true;
        for (let j = 2; j < i; j++) {
@@ -452,65 +436,102 @@ if (height < 150) {
            console.log(i);
        }
    }
-
-
-
-//  6. In bảng cửu chương của một số
-//    Yêu cầu người dùng nhập vào một số và in bảng cửu chương của số đó từ 1 đến 10.
-
    
-   let nummm = 5; // Hoặc lấy số từ prompt()
+// BÀI 6: In bảng cửu chương của một số
+//    Yêu cầu người dùng nhập vào một số và in bảng cửu chương của số đó từ 1 đến 10.
+   let numss = parseInt(prompt("Enter a number for multiplication table:"));
    for (let i = 1; i <= 10; i++) {
-       console.log(`${numm} * ${i} = ${numm * i}`);
+       console.log(`${numss} * ${i} = ${numss * i}`);
    }
-
-
-
-//  7. Tính giai thừa của một số
+   
+// BÀI 7: Tính giai thừa của một số
 //    Nhập một số từ người dùng và tính giai thừa của nó.
-
-   let numms= 5; // Hoặc lấy số từ prompt()
+   let numFactorial = parseInt(prompt("Enter a number to calculate factorial:"));
    let factoriall = 1;
-   for (let i = 1; i <= nums; i++) {
+   for (let i = 1; i <= numFactoriall; i++) {
        factoriall *= i;
    }
-   console.log(factoriall);
-
-
-
-//  8. Tính tổng các phần tử trong một mảng
-//    Cho một mảng các số. Sử dụng vòng lặp `for` để tính tổng của các phần tử trong mảng.
-
+   console.log(`Factorial of ${numFactoriall} is:`, factoriall);
    
-   let numbers = [1, 2, 3, 4, 5];
-   let summ = 0;
-   for (let i = 0; i < numbers.length; i++) {
-       summ += numbers[i];
-   }
-   console.log(sum);
-
-
-
-
-//  9. In các phần tử trong mảng theo thứ tự đảo ngược
-//    Cho một mảng, in các phần tử của nó theo thứ tự ngược lại.
-
-
+// BÀI 8: Tính tổng các phần tử trong một mảng
+//    Cho một mảng các số. Sử dụng vòng lặp `for` để tính tổng của các phần tử trong mảng.
    let array = [1, 2, 3, 4, 5];
-   for (let i = array.length - 1; i >= 0; i--) {
-       console.log(array[i]);
+   let totalSum = 0;
+   for (let i = 0; i < array.length; i++) {
+       totalSum += array[i];
    }
-
-
-
-//  10. Tìm số lớn nhất trong mảng
+   console.log("Sum of array elements:", totalSum);
+   
+// BÀI 9: In các phần tử trong mảng theo thứ tự đảo ngược
+//    Cho một mảng, in các phần tử của nó theo thứ tự ngược lại.
+   let arrayReverse = [1, 2, 3, 4, 5];
+   for (let i = arrayReverse.length - 1; i >= 0; i--) {
+       console.log(arrayReverse[i]);
+   }
+   
+// BÀI 10: Tìm số lớn nhất trong mảng
 //    Cho một mảng các số. Dùng vòng lặp `for` để tìm số lớn nhất trong mảng.
-
-   let numberss = [3, 7, 2, 9, 5];
-   let max = numberss[0];
-   for (let i = 1; i < numberss.length; i++) {
-       if (numberss[i] > max) {
-           max = numbers[i];
+   let numbers = [3, 7, 2, 9, 5];
+   let maxNumber = numbers[0];
+   for (let i = 1; i < numbers.length; i++) {
+       if (numbers[i] > maxNumber) {
+           maxNumber = numbers[i];
        }
    }
-   console.log("Max:", max);
+   console.log("Maximum number in array:", maxNumber);
+ 
+   
+//  Bài tập bổ sung với nhập liệu từ người dùng
+   
+
+   
+   
+//    1. In các số từ 1 đến `n`
+ 
+let z = parseInt(prompt("Enter a number:"));
+for (let i = 1; i <= z; i++) {
+ console.log(i);
+}
+    
+   
+//    2. Tính tổng các số từ 1 đến `n`
+  
+      let l = parseInt(prompt("Enter a number:"));
+      let sums = 0;
+      for (let i = 1; i <= l; i++) {
+          sums += i;
+      }
+      console.log("Sum from 1 to", n, ":", sums);
+      
+   
+//    3. In các số chẵn từ 1 đến `n`
+     
+      let t = parseInt(prompt("Enter a number:"));
+      for (let i = 2; i <= t; i += 2) {
+          console.log(i);
+      }
+      
+   
+//    4. Đảo ngược một chuỗi nhập từ người dùng
+     
+      let strs = prompt("Enter a string:");
+      let reversedd = "";
+      for (let i = str.length - 1; i >= 0; i--) {
+          reversedd += str[i];
+      }
+      console.log("Reversed string:", reversed);
+      
+   
+//    5. Kiểm tra số nguyên tố
+      
+      let e = parseInt(prompt("Enter a number:"));
+      let isPrimee = e > 1;
+      for (let i = 2; i <= Math.sqrt(e); i++) {
+          if (e % i === 0) {
+              isPrimee = false;
+              break;
+          }
+      }
+      console.log(n + (isPrimee ? " is a prime number." : " is not a prime number."));
+
+   
