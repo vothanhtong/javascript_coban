@@ -1,4 +1,4 @@
-// BÀI 1: TÍNH TỔNG HAI SỐ 
+//  TÍNH TỔNG HAI SỐ 
 const a = 5;
 const b = 10;
 cosole.log (a+b);
@@ -272,7 +272,7 @@ if (chieu_cao < 150) {
 }
 
 
-//                                                  điều kiện `if-else` trong JavaScript,
+// BÀI 1:                                             Điều Kiện `if-else` trong JavaScript,
 // 1. Kiểm tra số chẵn lẻ
 // **Mô tả:** Nhập một số và kiểm tra xem số đó là chẵn hay lẻ.
 
@@ -388,3 +388,129 @@ if (height < 150) {
 } else {
     console.log("Cao");
 }
+   
+
+// BÀI 2:                                                        VÒNG LẶP FOR 
+
+
+//  1. In các số từ 1 đến 10
+//    Sử dụng vòng lặp `for` để in ra các số từ 1 đến 10.
+
+   for (let i = 1; i <= 10; i++) {
+       console.log(i);
+   }
+   
+
+//  2. Tính tổng các số từ 1 đến 100
+//    Dùng vòng lặp `for` để tính tổng các số từ 1 đến 100.
+
+
+   let sum = 0;
+   for (let i = 1; i <= 100; i++) {
+       sum += i;
+   }
+   console.log(sum);
+   
+
+
+//  3. In các số chẵn từ 1 đến 20
+//    Sử dụng vòng lặp `for` để in ra các số chẵn từ 1 đến 20.
+
+  
+   for (let i = 2; i <= 20; i += 2) {
+       console.log(i);
+   }
+
+
+
+//  4. Đảo ngược một chuỗi
+//    Cho một chuỗi, sử dụng vòng lặp `for` để đảo ngược chuỗi đó.
+
+  
+   let str = "hello";
+   let reversed = "";
+   for (let i = str.length - 1; i >= 0; i--) {
+       reversed += str[i];
+   }
+   console.log(reversed);
+   
+
+
+//  5. Tìm số nguyên tố từ 1 đến 50
+//    Sử dụng vòng lặp `for` để tìm và in ra tất cả các số nguyên tố từ 1 đến 50.
+
+   
+   for (let i = 2; i <= 50; i++) {
+       let isPrime = true;
+       for (let j = 2; j < i; j++) {
+           if (i % j === 0) {
+               isPrime = false;
+               break;
+           }
+       }
+       if (isPrime) {
+           console.log(i);
+       }
+   }
+
+
+
+//  6. In bảng cửu chương của một số
+//    Yêu cầu người dùng nhập vào một số và in bảng cửu chương của số đó từ 1 đến 10.
+
+   
+   let nummm = 5; // Hoặc lấy số từ prompt()
+   for (let i = 1; i <= 10; i++) {
+       console.log(`${numm} * ${i} = ${numm * i}`);
+   }
+
+
+
+//  7. Tính giai thừa của một số
+//    Nhập một số từ người dùng và tính giai thừa của nó.
+
+   let numms= 5; // Hoặc lấy số từ prompt()
+   let factoriall = 1;
+   for (let i = 1; i <= nums; i++) {
+       factoriall *= i;
+   }
+   console.log(factoriall);
+
+
+
+//  8. Tính tổng các phần tử trong một mảng
+//    Cho một mảng các số. Sử dụng vòng lặp `for` để tính tổng của các phần tử trong mảng.
+
+   
+   let numbers = [1, 2, 3, 4, 5];
+   let summ = 0;
+   for (let i = 0; i < numbers.length; i++) {
+       summ += numbers[i];
+   }
+   console.log(sum);
+
+
+
+
+//  9. In các phần tử trong mảng theo thứ tự đảo ngược
+//    Cho một mảng, in các phần tử của nó theo thứ tự ngược lại.
+
+
+   let array = [1, 2, 3, 4, 5];
+   for (let i = array.length - 1; i >= 0; i--) {
+       console.log(array[i]);
+   }
+
+
+
+//  10. Tìm số lớn nhất trong mảng
+//    Cho một mảng các số. Dùng vòng lặp `for` để tìm số lớn nhất trong mảng.
+
+   let numberss = [3, 7, 2, 9, 5];
+   let max = numberss[0];
+   for (let i = 1; i < numberss.length; i++) {
+       if (numberss[i] > max) {
+           max = numbers[i];
+       }
+   }
+   console.log("Max:", max);
