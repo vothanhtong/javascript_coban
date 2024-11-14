@@ -1,4 +1,4 @@
-//  TÍNH TỔNG HAI SỐ 
+//                                                       TÍNH TỔNG HAI SỐ 
 const a = 5;
 const b = 10;
 cosole.log (a+b);
