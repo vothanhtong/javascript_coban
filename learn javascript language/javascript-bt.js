@@ -287,3 +287,100 @@ function includesValue(arr, value) {
 
 
 
+//                                                            Vòng lặp `while`
+
+// 1. Mục tiêu bài học:
+// - Hiểu cú pháp và cách hoạt động của vòng lặp `while`.
+// - Biết phân biệt giữa vòng lặp `while` và `do-while`.
+// - Sử dụng vòng lặp `while` để giải quyết các bài toán cơ bản.
+// - Biết cách tránh vòng lặp vô hạn.
+
+
+// Phần 1: Giới thiệu vòng lặp `while` 
+// - Giải thích khái niệm vòng lặp: 
+// - Giới thiệu vòng lặp là một cấu trúc giúp thực hiện một đoạn mã lặp đi lặp lại nhiều lần khi một điều kiện nào đó vẫn đúng.
+  
+// - Cú pháp của vòng lặp `while`:
+ 
+  while (condition) {
+      // Code thực hiện khi điều kiện đúng
+  }
+
+//   - Giải thích:
+    // - `condition`: Điều kiện của vòng lặp, là một biểu thức trả về giá trị `true` hoặc `false`.
+    // - Nếu `condition` là `true`, đoạn mã trong vòng lặp sẽ được thực thi.
+    // - Nếu `condition` là `false`, vòng lặp kết thúc.
+
+// - Ví dụ cơ bản:
+  
+let i = 0;
+  while (i < 5) {
+      console.log(i);
+      i++;
+  }
+//   - Giải thích: Vòng lặp in ra các số từ 0 đến 4.
+
+// Phần 2: Giới thiệu vòng lặp vô hạn và tránh lỗi 
+// - Giải thích về vòng lặp vô hạn:
+//   - Nếu điều kiện của vòng lặp luôn luôn đúng, vòng lặp sẽ chạy mãi không dừng, gây treo chương trình.
+
+// - Ví dụ về vòng lặp vô hạn:
+
+  let x = 0;
+  while (x >= 0) {
+      console.log(x); // Vòng lặp không bao giờ kết thúc
+  }
+
+// - Cách tránh vòng lặp vô hạn: Đảm bảo điều kiện có điểm dừng và biến đếm (counter) được thay đổi trong mỗi lần lặp.
+
+// Phần 3: Giới thiệu vòng lặp `do-while` 
+// - Cú pháp của vòng lặp `do-while`:
+
+  do {
+      // Code thực hiện
+  } while (condition);
+
+//   - Giải thích: Vòng lặp `do-while` sẽ luôn thực hiện ít nhất một lần, bất kể điều kiện ban đầu có đúng hay không.
+  
+// - Ví dụ:
+  
+  let number = 0;
+  do {
+      console.log(number);
+      number++;
+  } while (number < 5);
+
+//   - Giải thích:** In ra các số từ 0 đến 4, tương tự như vòng lặp `while`, nhưng luôn chạy ít nhất một lần.
+
+// Phần 4: Bài tập thực hành 
+// Bài tập 1: Tìm tổng các số từ 1 đến 100
+//   - Yêu cầu: Viết một chương trình sử dụng vòng lặp `while` để tính tổng các số từ 1 đến 100.
+  
+  let sum = 0;
+  let n = 1;
+  while (n <= 100) {
+      sum += n;
+      n++;
+  }
+  console.log("Tổng từ 1 đến 100 là:", sum);
+
+// Bài tập 2: Đoán số may mắn
+//   - Yêu cầu: Viết một chương trình cho phép người dùng nhập số từ 1 đến 10, nếu đoán đúng số 7 thì dừng vòng lặp và thông báo thắng.
+  
+  let guess;
+  while (guess !== 7) {
+      guess = parseInt(prompt("Nhập một số từ 1 đến 10:"));
+  }
+  console.log("Bạn đã đoán đúng số 7!");
+
+
+// Bài tập 3: Tìm số Fibonacci nhỏ hơn 1000
+//   - Yêu cầu: In ra các số trong dãy Fibonacci nhỏ hơn 1000 sử dụng vòng lặp `while`.
+  
+  let a = 0, b = 1, next;
+  while (a < 1000) {
+      console.log(a);
+      next = a + b;
+      a = b;
+      b = next;
+  }
