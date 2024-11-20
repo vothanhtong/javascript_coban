@@ -1,24 +1,19 @@
 // Dưới đây là một số hàm phổ biến trong JavaScript mà bạn thường xuyên sử dụng trong lập trình:
 
-// 1. **`console.log()`**
+// 1.`console.log()`
 //    In ra thông tin ra console, dùng để debug hoặc hiển thị thông tin.
-//    ```javascript
 //    console.log("Hello, world!");
-//    ```
 
-// 2. **`parseInt()`**
+// 2. `parseInt()`
 //    Chuyển đổi một chuỗi thành số nguyên.
-//    ```javascript
 //    let num = parseInt("123");
 //    console.log(num);  // 123
-//    ```
 
-// 3. **`parseFloat()`**
+// 3.`parseFloat()`
 //    Chuyển đổi một chuỗi thành số thực (float).
-//    ```javascript
 //    let num = parseFloat("123.45");
 //    console.log(num);  // 123.45
-//    ```
+
 
 // 4. **`toString()`**
 //    Chuyển đổi một giá trị thành chuỗi.
