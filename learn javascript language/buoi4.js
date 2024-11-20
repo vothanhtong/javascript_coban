@@ -1,61 +1,61 @@
 // Dưới đây là một số hàm phổ biến trong JavaScript mà bạn thường xuyên sử dụng trong lập trình:
 
-// ### 1. **`console.log()`**
+// 1. **`console.log()`**
 //    In ra thông tin ra console, dùng để debug hoặc hiển thị thông tin.
 //    ```javascript
 //    console.log("Hello, world!");
 //    ```
 
-// ### 2. **`parseInt()`**
+// 2. **`parseInt()`**
 //    Chuyển đổi một chuỗi thành số nguyên.
 //    ```javascript
 //    let num = parseInt("123");
 //    console.log(num);  // 123
 //    ```
 
-// ### 3. **`parseFloat()`**
+// 3. **`parseFloat()`**
 //    Chuyển đổi một chuỗi thành số thực (float).
 //    ```javascript
 //    let num = parseFloat("123.45");
 //    console.log(num);  // 123.45
 //    ```
 
-// ### 4. **`toString()`**
+// 4. **`toString()`**
 //    Chuyển đổi một giá trị thành chuỗi.
 //    ```javascript
 //    let num = 123;
 //    console.log(num.toString());  // "123"
 //    ```
 
-// ### 5. **`Math.random()`**
+// 5. **`Math.random()`**
 //    Sinh ra một số ngẫu nhiên từ 0 đến 1.
 //    ```javascript
 //    let randomNumber = Math.random();
 //    console.log(randomNumber);  // Ví dụ: 0.7847
 //    ```
 
-// ### 6. **`Math.floor()`**
+// 6. **`Math.floor()`**
 //    Làm tròn số xuống dưới (làm tròn xuống số nguyên gần nhất).
 //    ```javascript
 //    let num = 7.9;
 //    console.log(Math.floor(num));  // 7
 //    ```
 
-// ### 7. **`Math.ceil()`**
+// 7. **`Math.ceil()`**
 //    Làm tròn số lên trên (làm tròn lên số nguyên gần nhất).
 //    ```javascript
 //    let num = 7.1;
 //    console.log(Math.ceil(num));  // 8
 //    ```
 
-// ### 8. **`Math.round()`**
+// 8. **`Math.round()`**
 //    Làm tròn số đến số nguyên gần nhất.
 //    ```javascript
 //    let num = 7.5;
 //    console.log(Math.round(num));  // 8
 //    ```
 
-// ### 9. **`setTimeout()`**
+// 9. **`setTimeout()`**
 //    Đặt một hàm chạy sau một khoảng thời gian nhất định (tính bằng mili giây).
 //    ```javascript
 //    setTimeout(() => {
@@ -63,7 +63,7 @@
 //    }, 2000);
 //    ```
 
-// ### 10. **`setInterval()`**
+// 10. **`setInterval()`**
 //    Đặt một hàm chạy liên tục sau mỗi khoảng thời gian nhất định (tính bằng mili giây).
 //    ```javascript
 //    setInterval(() => {
@@ -71,7 +71,7 @@
 //    }, 3000);
 //    ```
 
-// ### 11. **`Array.prototype.push()`**
+// 11. **`Array.prototype.push()`**
 //    Thêm một hoặc nhiều phần tử vào cuối mảng.
 //    ```javascript
 //    let arr = [1, 2, 3];
@@ -79,7 +79,7 @@
 //    console.log(arr);  // [1, 2, 3, 4]
 //    ```
 
-// ### 12. **`Array.prototype.pop()`**
+// 12. **`Array.prototype.pop()`**
 //    Xóa phần tử cuối cùng khỏi mảng và trả về phần tử đó.
 //    ```javascript
 //    let arr = [1, 2, 3];
@@ -88,7 +88,7 @@
 //    console.log(arr);   // [1, 2]
 //    ```
 
-// ### 13. **`Array.prototype.shift()`**
+// 13. **`Array.prototype.shift()`**
 //    Xóa phần tử đầu tiên khỏi mảng và trả về phần tử đó.
 //    ```javascript
 //    let arr = [1, 2, 3];
@@ -97,7 +97,7 @@
 //    console.log(arr);    // [2, 3]
 //    ```
 
-// ### 14. **`Array.prototype.unshift()`**
+// 14. **`Array.prototype.unshift()`**
 //    Thêm một hoặc nhiều phần tử vào đầu mảng.
 //    ```javascript
 //    let arr = [2, 3];
@@ -105,42 +105,42 @@
 //    console.log(arr);  // [1, 2, 3]
 //    ```
 
-// ### 15. **`String.prototype.toUpperCase()`**
+// 15. **`String.prototype.toUpperCase()`**
 //    Chuyển đổi chuỗi thành chữ hoa.
 //    ```javascript
 //    let str = "hello";
 //    console.log(str.toUpperCase());  // "HELLO"
 //    ```
 
-// ### 16. **`String.prototype.toLowerCase()`**
+// 16. **`String.prototype.toLowerCase()`**
 //    Chuyển đổi chuỗi thành chữ thường.
 //    ```javascript
 //    let str = "HELLO";
 //    console.log(str.toLowerCase());  // "hello"
 //    ```
 
-// ### 17. **`String.prototype.includes()`**
+// 17. **`String.prototype.includes()`**
 //    Kiểm tra xem chuỗi có chứa một chuỗi con không.
 //    ```javascript
 //    let str = "Hello, world!";
 //    console.log(str.includes("world"));  // true
 //    ```
 
-// ### 18. **`Object.keys()`**
+// 18. **`Object.keys()`**
 //    Trả về một mảng chứa tất cả các khóa của đối tượng.
 //    ```javascript
 //    let obj = { name: "Alice", age: 25 };
 //    console.log(Object.keys(obj));  // ["name", "age"]
 //    ```
 
-// ### 19. **`Object.values()`**
+// 19. **`Object.values()`**
 //    Trả về một mảng chứa tất cả các giá trị của đối tượng.
 //    ```javascript
 //    let obj = { name: "Alice", age: 25 };
 //    console.log(Object.values(obj));  // ["Alice", 25]
 //    ```
 
-// ### 20. **`JSON.parse()`**
+// 20. **`JSON.parse()`**
 //    Chuyển đổi một chuỗi JSON thành đối tượng JavaScript.
 //    ```javascript
 //    let jsonString = '{"name": "Alice", "age": 25}';
@@ -148,7 +148,7 @@
 //    console.log(obj);  // { name: "Alice", age: 25 }
 //    ```
 
-// ### 21. **`JSON.stringify()`**
+// 21. **`JSON.stringify()`**
 //    Chuyển đổi một đối tượng JavaScript thành chuỗi JSON.
 //    ```javascript
 //    let obj = { name: "Alice", age: 25 };
@@ -156,7 +156,7 @@
 //    console.log(jsonString);  // '{"name":"Alice","age":25}'
 //    ```
 
-// ### 22. **`fetch()`**
+// 22. **`fetch()`**
 //    Lấy dữ liệu từ một API hoặc tài nguyên khác.
 //    ```javascript
 //    fetch('https://api.example.com/data')
@@ -165,7 +165,7 @@
 //      .catch(error => console.error('Error:', error));
 //    ```
 
-// ### 23. **`Array.prototype.map()`**
+// 23. **`Array.prototype.map()`**
 //    Tạo một mảng mới với kết quả từ việc gọi một hàm trên mỗi phần tử của mảng ban đầu.
 //    ```javascript
 //    let arr = [1, 2, 3];
@@ -173,7 +173,7 @@
 //    console.log(squared);  // [1, 4, 9]
 //    ```
 
-// ### 24. **`Array.prototype.filter()`**
+// 24. **`Array.prototype.filter()`**
 //    Tạo một mảng mới chứa các phần tử thỏa mãn điều kiện nhất định.
 //    ```javascript
 //    let arr = [1, 2, 3, 4, 5];
@@ -181,10 +181,10 @@
 //    console.log(even);  // [2, 4]
 //    ```
 
-// ### 25. **`Array.prototype.reduce()`**
+// 25. **`Array.prototype.reduce()`**
 //    Dùng để thực hiện phép toán tích lũy (như cộng dồn) trên mảng.
 //    ```javascript
 //    let arr = [1, 2, 3, 4];
 //    let sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 //    console.log(sum);  // 10
-  
+//    ```
