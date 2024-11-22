@@ -1,176 +1,138 @@
-
-// Bài 1: Tính Tổng và Kiểm Tra Số Chẵn Lẻ
-
-// 1. Tính tổng hai số do người dùng nhập vào:
-    
+function main() {
+    function isPasswordStrong(password) {
+      const minLength = 8;
+      const hasLetters = /[a-zA-Z]/.test(password);
+      const hasNumbers = /\d/.test(password);
+  
+      return password.length >= minLength && hasLetters && hasNumbers;
+    }
+  
+    let correctPassword = "javascript";
+    let attempts = 3;
+    let isAuthenticated = false;
+  
+    while (attempts > 0) {
+      let password = prompt("Nhập mật khẩu (ít nhất 8 ký tự, gồm chữ và số):");
+  
+      if (!isPasswordStrong(password)) {
+        console.log("Mật khẩu yếu. Vui lòng nhập lại (ít nhất 8 ký tự, gồm cả chữ và số).");
+        continue;
+      }
+  
+      if (password === correctPassword) {
+        console.log("Đăng nhập thành công!");
+        isAuthenticated = true;
+        break;
+      } else {
+        attempts--;
+        console.log(`Mật khẩu sai. Bạn còn ${attempts} lần thử.`);
+      }
+    }
+  
+    if (!isAuthenticated) {
+      console.log("Bạn đã nhập sai quá số lần cho phép.");
+      return; // Kết thúc chương trình nếu không đăng nhập được
+    }
+  
+    // Bài 1: Tính tổng và kiểm tra chẵn lẻ
     const t = parseFloat(prompt("Nhập số thứ nhất:"));
     const m = parseFloat(prompt("Nhập số thứ hai:"));
     console.log("Tổng của hai số là:", t + m);
-
-// 2. Kiểm tra chẵn lẻ của một số:
-
+  
     const number = parseInt(prompt("Nhập một số:"));
-    if (number % 2 === 0) {
-        console.log("Số " + number + " là số chẵn.");
-    } else {
-        console.log("Số " + number + " là số lẻ.");
-    }
-
-
-// Bài 2: Các Vòng Lặp Cơ Bản
-
-// 1. In các số từ 1 đến 10:
-   
+    console.log(`Số ${number} là số ${number % 2 === 0 ? "chẵn" : "lẻ"}.`);
+  
+    // Bài 2: Các vòng lặp cơ bản
+    console.log("In các số từ 1 đến 10:");
     for (let i = 1; i <= 10; i++) {
-        console.log(i);
+      console.log(i);
     }
-
-// 2. In các số chẵn từ 1 đến 20:
-   
+  
+    console.log("In các số chẵn từ 1 đến 20:");
     for (let i = 2; i <= 20; i += 2) {
-        console.log(i);
+      console.log(i);
     }
-    
-
-// 3. Tính tổng các số từ 1 đến 100:
-   
+  
+    console.log("Tính tổng các số từ 1 đến 100:");
     let sum = 0;
     for (let i = 1; i <= 100; i++) {
-        sum += i;
+      sum += i;
     }
     console.log("Tổng từ 1 đến 100 là:", sum);
-
-
-//  Bài 3: Các Phép Toán và Kiểm Tra Năm Nhuận
-
-// 1. Kiểm tra năm nhuận:
-
+  
+    // Bài 3: Kiểm tra năm nhuận và tính diện tích hình tròn
     const year = parseInt(prompt("Nhập một năm:"));
     if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-        console.log("Năm " + year + " là năm nhuận.");
+      console.log("Năm " + year + " là năm nhuận.");
     } else {
-        console.log("Năm " + year + " không phải là năm nhuận.");
+      console.log("Năm " + year + " không phải là năm nhuận.");
     }
-
-
-// 2. Tính diện tích hình tròn với bán kính cho trước:
-
-    const r = 7;
-    const pi = Math.PI;
-    console.log("Diện tích hình tròn là:", pi * r * r);
-
-
-// Bài 4: Kiểm Tra Điều Kiện và Phân Loại
-
-// 1. Kiểm tra mật khẩu người dùng:
-    
-    const password = prompt("Nhập mật khẩu:");
-    console.log(password === "javascript" ? "Mật khẩu đúng" : "Mật khẩu sai");
-
-
-// 2. Xác định độ tuổi:
-
-    const age = parseInt(prompt("Nhập tuổi của bạn:"));
-    console.log(age < 13 ? "Trẻ em" : "Người lớn");
-    
-
-// Bài 5: Các Tính Toán và Kiểm Tra Số Nguyên Tố
-
-// 1. Kiểm tra số nguyên tố:
-    
+  
+    const r = parseFloat(prompt("Nhập bán kính hình tròn:"));
+    console.log("Diện tích hình tròn là:", Math.PI * r * r);
+  
+    // Bài 5: Kiểm tra số nguyên tố và tính giai thừa
     const num = parseInt(prompt("Nhập một số nguyên dương:"));
     let isPrime = num > 1;
     for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i === 0) {
-            isPrime = false;
-            break;
-        }
+      if (num % i === 0) {
+        isPrime = false;
+        break;
+      }
     }
-    console.log(isPrime ? "Là số nguyên tố" : "Không phải là số nguyên tố");
-
-
-// 2.Tính giai thừa của một số:
-    
-    const n = parseInt(prompt("Nhập một số nguyên dương:"));
+    console.log(num + (isPrime ? " là số nguyên tố." : " không phải là số nguyên tố."));
+  
+    const n = parseInt(prompt("Nhập một số nguyên dương để tính giai thừa:"));
     let factorial = 1;
     for (let i = 1; i <= n; i++) {
-        factorial *= i;
+      factorial *= i;
     }
     console.log(`Giai thừa của ${n} là: ${factorial}`);
-    
+  }
+  
+  // Gọi hàm chính để chạy toàn bộ chương trình
+  main();
+  
+// Kiểm tra mật khẩu nâng cấp (Bài 4.1).
+// Tính tổng và kiểm tra chẵn lẻ (Bài 1).
+// Vòng lặp cơ bản (Bài 2).
+// Kiểm tra năm nhuận và tính diện tích hình tròn (Bài 3).
+// Kiểm tra số nguyên tố và tính giai thừa (Bài 5)
+// Các Chức Năng Đã Nâng Cấp:
+// Kiểm tra mật khẩu nâng cấp:
 
-//  Bài 6: Thực Hành với Các Toán Tử
+// Xác thực với mật khẩu mạnh (>= 8 ký tự, gồm cả chữ và số).
+// Cho phép nhập lại tối đa 3 lần nếu sai.
+// Kết thúc chương trình nếu đăng nhập thất bại.
+// Tính tổng và kiểm tra chẵn lẻ:
 
-// 1. Chia lấy phần dư:
-    
-    const a = 10, b = 3;
-    console.log("Phần dư của", a, "chia cho", b, "là:", a % b);
+// Nhập 2 số bất kỳ để tính tổng.
+// Kiểm tra chẵn/lẻ với một số nhập vào.
+// Vòng lặp cơ bản:
 
+// In các số từ 1 đến 10.
+// In các số chẵn từ 1 đến 20.
+// Tính tổng các số từ 1 đến 100.
+// Kiểm tra năm nhuận và tính diện tích hình tròn:
 
-// 2. Tính lũy thừa:
-    
-    const base = 2, exponent = 3;
-    console.log(base + " mũ " + exponent + " là:", base ** exponent);
-    
+// Nhập năm bất kỳ để kiểm tra năm nhuận.
+// Nhập bán kính để tính diện tích hình tròn.
+// Kiểm tra số nguyên tố và tính giai thừa:
 
-//  Bài 7: Sử Dụng Cấu Trúc `switch-case` để Xác Định Ngày
-
-// 1. Kiểm tra ngày trong tuần dựa trên số nhập vào:
-    
-    const day = parseInt(prompt("Nhập ngày trong tuần (1-7):"));
-    switch (day) {
-        case 1: console.log("Thứ 2"); break;
-        case 2: console.log("Thứ 3"); break;
-        case 3: console.log("Thứ 4"); break;
-        case 4: console.log("Thứ 5"); break;
-        case 5: console.log("Thứ 6"); break;
-        case 6: console.log("Thứ 7"); break;
-        case 7: console.log("Chủ Nhật"); break;
-        default: console.log("Ngày không hợp lệ");
-    }
-
-
-
-
-// Nhập mật khẩu:
-// Mật khẩu chính xác là "javascript".
-// Kiểm tra độ mạnh của mật khẩu:
-// Mật khẩu phải có ít nhất 8 ký tự, chứa cả chữ cái và số.
-// Cho phép nhập lại nếu sai tối đa 3 lần.
-
-    function isPasswordStrong(password) {
-        const minLength = 8;
-        const hasLetters = /[a-zA-Z]/.test(password);
-        const hasNumbers = /\d/.test(password);
-        
-        return password.length >= minLength && hasLetters && hasNumbers;
-      }
-      
-      let correctPassword = "javascript";
-      let attempts = 3; // Số lần nhập tối đa
-      let isAuthenticated = false;
-      
-      while (attempts > 0) {
-        let password = prompt("Nhập mật khẩu (ít nhất 8 ký tự, gồm chữ và số):");
-      
-        // Kiểm tra độ mạnh của mật khẩu
-        if (!isPasswordStrong(password)) {
-          console.log("Mật khẩu yếu. Vui lòng nhập lại (ít nhất 8 ký tự, gồm cả chữ và số).");
-          continue;
-        }
-      
-        // Kiểm tra tính chính xác của mật khẩu
-        if (password === correctPassword) {
-          console.log("Đăng nhập thành công!");
-          isAuthenticated = true;
-          break;
-        } else {
-          attempts--;
-          console.log(`Mật khẩu sai. Bạn còn ${attempts} lần thử.`);
-        }
-      }
-      
-      if (!isAuthenticated) {
-        console.log("Bạn đã nhập sai quá số lần cho phép.");
-      }
-      
+// Kiểm tra một số bất kỳ có phải là số nguyên tố.
+// Tính giai thừa của một số nguyên dương.
+// Cách Sử Dụng:
+// Chạy chương trình bằng cách gọi hàm main().
+// Chương trình lần lượt thực hiện các bài tập theo trình tự.
+// Nếu mật khẩu sai 3 lần, chương trình kết thúc ngay lập tức.
+// Ví Dụ Kết Quả:
+// Nhập mật khẩu đúng: javascript123 -> Chương trình tiếp tục.
+// Tính toán số: Nhập 5, 10 -> Kết quả:
+// r
+// Sao chép mã
+// Tổng của hai số là: 15
+// Số 10 là số chẵn.
+// Vòng lặp: In từ 1-10, các số chẵn, tổng từ 1-100.
+// Năm nhuận: Nhập 2024 -> Kết quả: Năm 2024 là năm nhuận.
+// Số nguyên tố: Nhập 7 -> 7 là số nguyên tố.
+// Giai thừa: Nhập 5 -> Giai thừa của 5 là: 120.
