@@ -128,4 +128,49 @@
         case 7: console.log("Chủ Nhật"); break;
         default: console.log("Ngày không hợp lệ");
     }
-    
+
+
+
+
+// Nhập mật khẩu:
+// Mật khẩu chính xác là "javascript".
+// Kiểm tra độ mạnh của mật khẩu:
+// Mật khẩu phải có ít nhất 8 ký tự, chứa cả chữ cái và số.
+// Cho phép nhập lại nếu sai tối đa 3 lần.
+
+    function isPasswordStrong(password) {
+        const minLength = 8;
+        const hasLetters = /[a-zA-Z]/.test(password);
+        const hasNumbers = /\d/.test(password);
+        
+        return password.length >= minLength && hasLetters && hasNumbers;
+      }
+      
+      let correctPassword = "javascript";
+      let attempts = 3; // Số lần nhập tối đa
+      let isAuthenticated = false;
+      
+      while (attempts > 0) {
+        let password = prompt("Nhập mật khẩu (ít nhất 8 ký tự, gồm chữ và số):");
+      
+        // Kiểm tra độ mạnh của mật khẩu
+        if (!isPasswordStrong(password)) {
+          console.log("Mật khẩu yếu. Vui lòng nhập lại (ít nhất 8 ký tự, gồm cả chữ và số).");
+          continue;
+        }
+      
+        // Kiểm tra tính chính xác của mật khẩu
+        if (password === correctPassword) {
+          console.log("Đăng nhập thành công!");
+          isAuthenticated = true;
+          break;
+        } else {
+          attempts--;
+          console.log(`Mật khẩu sai. Bạn còn ${attempts} lần thử.`);
+        }
+      }
+      
+      if (!isAuthenticated) {
+        console.log("Bạn đã nhập sai quá số lần cho phép.");
+      }
+      
