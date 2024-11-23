@@ -1,27 +1,27 @@
 // QUẢN LÝ THỜI KHÓA BIỂU 
 
-1. Menu chính:  
-   - 1: Thêm sự kiện  
-   - 2: Xem lịch trình  
-   - 3: Chỉnh sửa sự kiện  
-   - 4: Thoát  
+// 1. Menu chính:  
+//    - 1: Thêm sự kiện  
+//    - 2: Xem lịch trình  
+//    - 3: Chỉnh sửa sự kiện  
+//    - 4: Thoát  
 
-2. **Thêm sự kiện (1)**:  
-   - Nhập thông tin: Tháng, Tuần, Ngày, Thời gian, Tên, Chi tiết, Quan trọng.  
-   - Kiểm tra trùng, có thể hợp nhất nếu cần.  
+// 2. Thêm sự kiện (1):  
+//    - Nhập thông tin: Tháng, Tuần, Ngày, Thời gian, Tên, Chi tiết, Quan trọng.  
+//    - Kiểm tra trùng, có thể hợp nhất nếu cần.  
 
-3. **Xem lịch trình (2)**:  
-   - Hiển thị danh sách sự kiện đã lưu.  
-   - Thông báo "Không có sự kiện" nếu danh sách rỗng.  
+// 3. Xem lịch trình (2):  
+//    - Hiển thị danh sách sự kiện đã lưu.  
+//    - Thông báo "Không có sự kiện" nếu danh sách rỗng.  
 
-4. **Chỉnh sửa sự kiện (3)**:  
-   - Tìm sự kiện theo Tháng, Tuần, Ngày.  
-   - Tùy chọn: Thêm chi tiết, sửa thông tin, xóa sự kiện.  
+// 4. Chỉnh sửa sự kiện (3):  
+//    - Tìm sự kiện theo Tháng, Tuần, Ngày.  
+//    - Tùy chọn: Thêm chi tiết, sửa thông tin, xóa sự kiện.  
 
-5. **Thoát (4)**:  
-   - Kết thúc chương trình.  
+// 5. Thoát (4):  
+//    - Kết thúc chương trình.  
 
-**Hết.**const duLieuNgoai = [];
+const duLieuNgoai = [];
 
 function hienThiMenu() {
     console.log("1. Thêm sự kiện mới");
