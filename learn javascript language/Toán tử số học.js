@@ -33,10 +33,10 @@
 //      - Tiền tố (`++a`): Tăng giá trị trước, sau đó trả về giá trị mới.  
 //      - Hậu tố (`a++`): Trả về giá trị ban đầu, sau đó mới tăng.  
 //    - Ví dụ: 
-     let a = 5;
-     console.log(++a); // Kết quả: 6 (tăng trước, trả giá trị mới)
-     console.log(a++); // Kết quả: 6 (trả giá trị cũ, sau đó tăng)
-     console.log(a);   // Kết quả: 7
+   //   let a = 5;
+   //   console.log(++a); // Kết quả: 6 (tăng trước, trả giá trị mới)
+   //   console.log(a++); // Kết quả: 6 (trả giá trị cũ, sau đó tăng)
+   //   console.log(a);   // Kết quả: 7
   
 
 // 5. Số không hợp lệ (NaN):
@@ -95,38 +95,38 @@
 //    Viết chương trình cộng hai số bất kỳ do người dùng nhập vào.  
 
     
-   let a = parseFloat(prompt("Nhập số thứ nhất:"));
-   let b = parseFloat(prompt("Nhập số thứ hai:"));
-   console.log("Tổng hai số là:", a + b);
+   // let a = parseFloat(prompt("Nhập số thứ nhất:"));
+   // let b = parseFloat(prompt("Nhập số thứ hai:"));
+   // console.log("Tổng hai số là:", a + b);
 
 // 2. Bài tập 2:  
 //    Nhập một số và tính bình phương của nó.  
 
  
-   let num = parseFloat(prompt("Nhập một số:"));
-   console.log("Bình phương là:", num 
-    2);
+   // let num = parseFloat(prompt("Nhập một số:"));
+   // console.log("Bình phương là:", num 
+   //  2);
    
 
 // 3. Bài tập 3:  
 //    Tính thương và phần dư khi chia hai số.  
 
 
-   let a = parseFloat(prompt("Nhập số bị chia:"));
-   let b = parseFloat(prompt("Nhập số chia:"));
-   console.log("Thương là:", a / b);
-   console.log("Phần dư là:", a % b);
+   // let a = parseFloat(prompt("Nhập số bị chia:"));
+   // let b = parseFloat(prompt("Nhập số chia:"));
+   // console.log("Thương là:", a / b);
+   // console.log("Phần dư là:", a % b);
 
 // 4. Bài tập 4: 
 //    Tăng giá trị một biến số lên 1 đơn vị, sau đó giảm đi 1 đơn vị, và in kết quả.  
 
 
-   let num = 5;
-   console.log("Giá trị ban đầu:", num);
-   num++;
-   console.log("Sau khi tăng:", num);
-   num--;
-   console.log("Sau khi giảm:", num);
+   // let num = 5;
+   // console.log("Giá trị ban đầu:", num);
+   // num++;
+   // console.log("Sau khi tăng:", num);
+   // num--;
+   // console.log("Sau khi giảm:", num);
 
 
 // 5. Bài tập 5: 
