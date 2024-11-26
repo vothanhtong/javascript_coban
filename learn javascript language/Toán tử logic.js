@@ -80,3 +80,55 @@ if (!(n >= 1 && n <= 100)) {
 } else {
     console.log("Số nằm trong khoảng 1 đến 100");
 }
+
+
+
+
+
+
+                                        //  Bài Thực Hành: Kiểm Tra Hệ Thống Đăng Nhập  
+
+// Mô tả bài toán: 
+// Bạn sẽ xây dựng một chương trình JavaScript để kiểm tra tính hợp lệ khi người dùng đăng nhập. Hệ thống sẽ sử dụng toán tử logic để kiểm tra:  
+// 1. Tên đăng nhập (`username`) và mật khẩu (`password`) có chính xác không.  
+// 2. Người dùng phải nằm trong danh sách người được phép đăng nhập.  
+// 3. Nếu thông tin không đúng, chương trình sẽ phản hồi thông báo lỗi thích hợp.  
+
+// Yêu cầu:  
+// - Danh sách tài khoản hợp lệ được lưu trong một mảng.  
+// - Hệ thống sẽ chỉ cho phép người dùng truy cập nếu:
+//   - Tên đăng nhập và mật khẩu đều chính xác.
+//   - Người dùng thuộc danh sách hợp lệ.
+// - Nếu không, hệ thống sẽ thông báo lỗi cụ thể:  
+//   - "Sai tên đăng nhập hoặc mật khẩu."  
+//   - "Người dùng không được phép đăng nhập."
+
+// Chương trình mẫu:
+
+
+// Danh sách tài khoản hợp lệ
+const validUsers = [
+    { username: "admin", password: "123456" },
+    { username: "user1", password: "password1" },
+    { username: "guest", password: "guest123" }
+];
+
+// Hàm kiểm tra thông tin đăng nhập
+function login(username, password) {
+    // Kiểm tra thông tin đăng nhập
+    const user = validUsers.find(user => user.username === username);
+
+    if (!user) {
+        console.log("Sai tên đăng nhập hoặc mật khẩu.");
+    } else if (user.password !== password) {
+        console.log("Sai tên đăng nhập hoặc mật khẩu.");
+    } else {
+        console.log(`Chào mừng ${username}! Bạn đã đăng nhập thành công.`);
+    }
+}
+
+// Thử nghiệm với các trường hợp khác nhau
+login("admin", "123456"); // Đăng nhập thành công
+login("user1", "wrongPassword"); // Sai mật khẩu
+login("unknown", "123456"); // Sai tên đăng nhập
+login("guest", "guest123"); // Đăng nhập thành công
