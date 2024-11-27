@@ -89,4 +89,38 @@ for (let i = 1; i <= 5; i++) {
 // 1. Viết chương trình in các số từ 10 đến 1 bằng vòng lặp `for`.
 // 2. Dùng `while` để tính tổng các số từ 1 đến 100.
 // 3. Viết chương trình lặp qua một mảng và in từng phần tử của nó.
+                                            // Máy Tính Cơ Bản (Cộng, Trừ, Nhân, Chia)
 
+// Các số đã được gán sẵn
+let num1 = 10;
+let num2 = 5;
+
+// Hàm cộng
+function add(a, b) {
+    return a + b;
+}
+
+// Hàm trừ
+function subtract(a, b) {
+    return a - b;
+}
+
+// Hàm nhân
+function multiply(a, b) {
+    return a * b;
+}
+
+// Hàm chia
+function divide(a, b) {
+    if (b !== 0) {
+        return a / b;
+    } else {
+        return "Không thể chia cho 0!";
+    }
+}
+
+// Thực hiện các phép toán
+console.log("Kết quả phép cộng: " + add(num1, num2));
+console.log("Kết quả phép trừ: " + subtract(num1, num2));
+console.log("Kết quả phép nhân: " + multiply(num1, num2));
+console.log("Kết quả phép chia: " + divide(num1, num2));
