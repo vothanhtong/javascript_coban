@@ -204,9 +204,6 @@ evaluateButton.addEventListener("click", evaluateStudent);
 checkLeapYearButton.addEventListener("click", checkLeapYear);
 
 
-
-
-
 // Chức năng của mã JavaScript:
 // 1. **Đánh giá học lực:**
 //    - Người dùng nhập điểm từ 0 đến 10.
