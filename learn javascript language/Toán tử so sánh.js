@@ -1,229 +1,162 @@
-// // 1. Cấu trúc của vòng lặp `while`
+ // Khái niệm Toán tử so sánh trong javascript 
+ // Toán tử so sánh là các ký hiệu được sử dụng để so sánh hai giá trị. Kết quả của các phép so sánh là `true` hoặc `false`, và thường được dùng trong các câu lệnh điều kiện như `if`, `else`.
 
-// **Cú pháp cơ bản**:
-// ```javascript
-// while (điều_kiện) {
-//   // Khối lệnh thực thi nếu điều kiện đúng
-// }
-// ```
+// ### Các loại toán tử so sánh trong javascript
 
-// **Cách hoạt động**:
-// 1. **Kiểm tra điều kiện** trước khi thực hiện.
-// 2. **Nếu điều kiện đúng**, thực thi các lệnh trong khối.
-// 3. **Lặp lại kiểm tra điều kiện**.
-// 4. **Khi điều kiện sai**, thoát vòng lặp.
+// 1. So sánh bằng (`==`)  
+//    So sánh giá trị của hai biến, bỏ qua kiểu dữ liệu.  
+//    - Ví dụ:  
+//     
+//      console.log(5 == "5"); // true (vì giá trị giống nhau)
+//      
 
-// **Ví dụ**:
-// In các số từ 1 đến 5:
-// ```javascript
-// let i = 1;
-// while (i <= 5) {
-//   console.log(i);
-//   i++; // Tăng giá trị để thoát vòng lặp
-// }
-// ```
+// 2. So sánh bằng nghiêm ngặt (`===`)  
+//    So sánh giá trị và cả kiểu dữ liệu.  
+//    - Ví dụ:  
+//     
+//      console.log(5 === "5"); // false (vì khác kiểu dữ liệu)
+//      
 
-// ---
+// 3. So sánh khác (`!=`)  
+//    So sánh giá trị, bỏ qua kiểu dữ liệu.  
+//    - Ví dụ:  
+//     
+//      console.log(5 != "5"); // false
+//      
 
-// ### **2. Ưu điểm và nhược điểm của `while`**
+// 4. So sánh khác nghiêm ngặt (`!==`)  
+//    So sánh giá trị và kiểu dữ liệu.  
+//    - Ví dụ:  
+//     
+//      console.log(5 !== "5"); // true
+//      
 
-// | **Ưu điểm**                                         | **Nhược điểm**                                           |
-// |-----------------------------------------------------|---------------------------------------------------------|
-// | Phù hợp khi **không biết trước số lần lặp**.         | Dễ dẫn đến vòng lặp vô hạn nếu không quản lý điều kiện. |
-// | Thích hợp với các **điều kiện phức tạp**.           | Không tối ưu khi biết trước số lần lặp (dùng `for`).    |
+// 5. Lớn hơn (`>`)  
+//    Kiểm tra xem giá trị bên trái có lớn hơn giá trị bên phải không.  
+//    - Ví dụ:  
+//     
+//      console.log(10 > 5); // true
+//      
 
-// ---
+// 6. Nhỏ hơn (`<`)  
+//    Kiểm tra xem giá trị bên trái có nhỏ hơn giá trị bên phải không.  
+//    - Ví dụ:  
+//     
+//      console.log(10 < 5); // false
+//      
 
-// ### **3. Lưu ý khi sử dụng `while`**
+// 7. Lớn hơn hoặc bằng (`>=`)  
+//    Kiểm tra xem giá trị bên trái có lớn hơn hoặc bằng giá trị bên phải không.  
+//    - Ví dụ:  
+//     
+//      console.log(5 >= 5); // true
+//      
 
-// 1. **Quản lý điều kiện kết thúc**:
-//    - Đảm bảo điều kiện sẽ sai sau một số lần lặp:
-//      ```javascript
-//      let y = 1;
-//      while (y <= 5) {
-//        console.log(y);
-//        y++; // Thoát vòng lặp
-//      }
-//      ```
+// 8. Nhỏ hơn hoặc bằng (`<=`)  
+//    Kiểm tra xem giá trị bên trái có nhỏ hơn hoặc bằng giá trị bên phải không.  
+//    - Ví dụ:  
+//     
+//      console.log(5 <= 10); // true
+//      
 
-// 2. **Tránh điều kiện kiểm tra phức tạp**:
-//    - Điều kiện đơn giản, dễ hiểu giúp tránh nhầm lẫn:
-//      ```javascript
-//      while (i > 0 && i % 2 === 0) {
-//        // Điều kiện đơn giản, dễ hiểu
-//      }
-//      ```
+// 
 
-// 3. **Sử dụng biến đếm hợp lý**:
-//    - Cập nhật biến đếm để vòng lặp không vô hạn:
-//      ```javascript
-//      let count = 10;
-//      while (count > 0) {
-//        console.log(count);
-//        count--; // Điều kiện kết thúc hợp lý
-//      }
-//      ```
+// ### Lưu ý khi sử dụng toán tử so sánh trong
 
-// 4. **Sử dụng `break` và `continue` đúng cách**:
-//    - `break`: Thoát khỏi vòng lặp ngay lập tức.
-//    - `continue`: Bỏ qua lần lặp hiện tại, tiếp tục vòng tiếp theo.
-//      ```javascript
-//      let z = 1;
-//      while (z <= 10) {
-//        if (z === 5) {
-//          break; // Thoát vòng lặp khi z = 5
-//        }
-//        console.log(z);
-//        z++;
-//      }
-//      ```
+// 1. Phân biệt `==` và `===`:  
+//    - Sử dụng `===` để tránh kết quả bất ngờ do tự động chuyển đổi kiểu.  
+//     
+//      console.log(0 == false);  // true (chuyển đổi kiểu)
+//      console.log(0 === false); // false (không chuyển đổi kiểu)
+//      
 
-// ---
+// 2. Kiểu dữ liệu khác:  
+//    Khi so sánh các kiểu dữ liệu khác, sẽ cố gắng chuyển đổi về cùng một kiểu.  
+//    - Ví dụ:  
+//     
+//      console.log("5" > 3); // true (chuyển đổi "5" thành số)
+//      
 
-// ### **4. Bài tập thực hành với `while`**
+// 3. So sánh giá trị không xác định (`undefined`) hoặc giá trị rỗng (`null`):  
+//    - `undefined == null` là `true`, nhưng `undefined === null` là `false`.  
+//     
+//      console.log(undefined == null);  // true
+//      console.log(undefined === null); // false
+//      
 
-// 1. **Tính tổng từ 1 đến 100**:
-//    ```javascript
-//    let sum = 0;
-//    let t = 1;
-//    while (t <= 100) {
-//      sum += t;
-//      t++;
-//    }
-//    console.log("Tổng từ 1 đến 100 là:", sum);
-//    ```
+// 4. So sánh chuỗi:  
+//    So sánh chuỗi dựa trên thứ tự từ điển (unicode).  
+//    - Ví dụ:  
+//     
+//      console.log("apple" > "banana"); // false
+//      
 
-// 2. **Tìm số chẵn từ 1 đến 50**:
-//    ```javascript
-//    let l = 1;
-//    while (l <= 50) {
-//      if (l % 2 === 0) {
-//        console.log(l);
-//      }
-//      l++;
-//    }
-//    ```
+// 
 
-// 3. **Đếm số chữ số của một số nguyên**:
-//    ```javascript
-//    let number = 12345;
-//    let count = 0;
-//    while (number > 0) {
-//      number = Math.floor(number / 10);
-//      count++;
-//    }
-//    console.log("Số chữ số là:", count);
-//    ```
+// ### 10 Bài tập vận dụng toán tử so sánh
 
-// 4. **Đảo ngược một số**:
-//    ```javascript
-//    let number = 12345;
-//    let reversed = 0;
-//    while (number > 0) {
-//      let digit = number % 10; // Lấy chữ số cuối
-//      reversed = reversed * 10 + digit; // Ghép chữ số
-//      number = Math.floor(number / 10); // Loại bỏ chữ số cuối
-//    }
-//    console.log("Số sau khi đảo ngược:", reversed);
-//    ```
+// 1. Bài tập 1: Kiểm tra hai số bằng nhau.
+//   
+//    let a = parseFloat(prompt("Nhập số thứ nhất:"));
+//    let b = parseFloat(prompt("Nhập số thứ hai:"));
+//    console.log(a === b ? "Hai số bằng nhau" : "Hai số không bằng nhau");
+//    
 
-// 5. **In bảng cửu chương của 5**:
-//    ```javascript
-//    let a = 1;
-//    while (a <= 10) {
-//      console.log(`5 x ${a} = ${5 * a}`);
-//      a++;
-//    }
-//    ```
+// 2. Bài tập 2: Kiểm tra số nhập vào có lớn hơn 0 không.
+//   
+//    let num = parseFloat(prompt("Nhập một số:"));
+//    console.log(num > 0 ? "Số lớn hơn 0" : "Số không lớn hơn 0");
+//    
 
-// 6. **Tìm ước số của một số**:
-//    ```javascript
-//    let number = 12;
-//    let u = 1;
-//    while (u <= number) {
-//      if (number % u === 0) {
-//        console.log(u);
-//      }
-//      u++;
-//    }
-//    ```
+// 3. Bài tập 3: Kiểm tra số chẵn hay số lẻ.
+//   
+//    let num = parseInt(prompt("Nhập một số nguyên:"));
+//    console.log(num % 2 === 0 ? "Số chẵn" : "Số lẻ");
+//    
 
-// 7. **Kiểm tra số nguyên tố**:
-//    ```javascript
-//    let number = 17;
-//    let i = 2;
-//    let isPrime = true;
-//    while (i <= Math.sqrt(number)) {
-//      if (number % i === 0) {
-//        isPrime = false;
-//        break;
-//      }
-//      i++;
-//    }
-//    console.log(`${number} là số nguyên tố?`, isPrime);
-//    ```
+// 4. Bài tập 4: Kiểm tra một số có thuộc khoảng [10, 20].
+//   
+//    let num = parseFloat(prompt("Nhập một số:"));
+//    console.log(num >= 10 && num <= 20 ? "Số nằm trong khoảng [10, 20]" : "Số không nằm trong khoảng");
+//    
 
-// 8. **In dãy Fibonacci**:
-//    ```javascript
-//    let n = 10; // Số lượng số Fibonacci
-//    let a = 0, b = 1;
-//    let count = 0;
-//    while (count < n) {
-//      console.log(a);
-//      let temp = a + b;
-//      a = b;
-//      b = temp;
-//      count++;
-//    }
-//    ```
+// 5. Bài tập 5: So sánh hai chuỗi.
+//   
+//    let str1 = prompt("Nhập chuỗi thứ nhất:");
+//    let str2 = prompt("Nhập chuỗi thứ hai:");
+//    console.log(str1 === str2 ? "Hai chuỗi bằng nhau" : "Hai chuỗi không bằng nhau");
+//    
 
-// 9. **Tính giai thừa**:
-//    ```javascript
-//    let n = 5;
-//    let factorial = 1;
-//    let i = 1;
-//    while (i <= n) {
-//      factorial *= i;
-//      i++;
-//    }
-//    console.log(`${n}! = ${factorial}`);
-//    ```
+// 6. Bài tập 6: So sánh điểm học sinh với ngưỡng đậu.
+//   
+//    let score = parseFloat(prompt("Nhập điểm thi:"));
+//    console.log(score >= 50 ? "Đậu" : "Rớt");
+//    
 
-// 10. **Kiểm tra số đối xứng**:
-//     ```javascript
-//     let number = 121;
-//     let original = number;
-//     let reversed = 0;
-//     while (number > 0) {
-//       let digit = number % 10;
-//       reversed = reversed * 10 + digit;
-//       number = Math.floor(number / 10);
-//     }
-//     console.log(`${original} là số đối xứng?`, original === reversed);
-//     ```
+// 7. Bài tập 7: Kiểm tra số nhập vào có phải là số âm.
+//   
+//    let num = parseFloat(prompt("Nhập một số:"));
+//    console.log(num < 0 ? "Số âm" : "Không phải số âm");
+//    
 
-// ---
+// 8. Bài tập 8: Xác định số lớn nhất trong 3 số.
+//   
+//    let a = parseFloat(prompt("Nhập số thứ nhất:"));
+//    let b = parseFloat(prompt("Nhập số thứ hai:"));
+//    let c = parseFloat(prompt("Nhập số thứ ba:"));
+//    let max = a > b ? (a > c ? a : c) : (b > c ? b : c);
+//    console.log("Số lớn nhất là:", max);
+//    
 
-// ### **5. So sánh `while` và `do...while`**
+// 9. Bài tập 9: Kiểm tra năm có phải năm nhuận.
+//   
+//    let year = parseInt(prompt("Nhập năm:"));
+//    console.log((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? "Năm nhuận" : "Không phải năm nhuận");
+//    
 
-// | Đặc điểm                | `while`                       | `do...while`                   |
-// |-------------------------|-------------------------------|---------------------------------|
-// | **Kiểm tra điều kiện**  | Trước khi thực hiện khối lệnh | Sau khi thực hiện khối lệnh    |
-// | **Thực thi tối thiểu**  | Có thể là 0 lần               | Ít nhất 1 lần                  |
-// | **Khi nào dùng**        | Cần kiểm tra trước            | Cần thực thi ít nhất 1 lần     |
-
-// **Ví dụ**:
-// - **`while`**:
-//   ```javascript
-//   let x = 5;
-//   while (x < 5) {
-//     console.log("Sẽ không thực thi nếu điều kiện sai từ đầu.");
-//   }
-//   ```
-// - **`do...while`**:
-//   ```javascript
-//   let x = 5;
-//   do {
-//     console.log("Sẽ thực thi ít nhất 1 lần.");
-//   } while (x < 5);
-//   ```
+// 10. Bài tập 10: So sánh độ dài hai chuỗi.
+//    
+//     let str1 = prompt("Nhập chuỗi thứ nhất:");
+//     let str2 = prompt("Nhập chuỗi thứ hai:");
+//     console.log(str1.length === str2.length ? "Hai chuỗi có độ dài bằng nhau" : "Hai chuỗi có độ dài khác nhau");
+//     
