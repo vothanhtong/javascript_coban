@@ -66,7 +66,6 @@
 //      let name = "John";
 //      let age = 30;
 //      let salary = 5000.5;
-
 //      console.log(`Name: ${name}`);
 //      console.log(`Age: ${age}`);
 //      console.log(`Salary: ${salary}`);
@@ -76,7 +75,6 @@
 //      let name = prompt("Nhập tên của bạn:");
 //      let age = parseInt(prompt("Nhập tuổi của bạn:"));
 //      let city = prompt("Nhập thành phố của bạn:");
-
 //      console.log(`Tên bạn là: ${name}`);
 //      console.log(`Tuổi của bạn là: ${age}`);
 //      console.log(`Bạn đến từ: ${city}`);
@@ -87,7 +85,6 @@
 //      let width = parseFloat(prompt("Nhập chiều rộng:"));
 //      let perimeter = 2 * (length + width);
 //      let area = length * width;
-
 //      console.log(`Chu vi: ${perimeter}`);
 //      console.log(`Diện tích: ${area}`);
    
@@ -95,7 +92,6 @@
 //    - Hoán đổi giá trị hai biến mà không dùng biến trung gian:
 //      let a = 5, b = 10;
 //      [a, b] = [b, a]; // Hoán đổi bằng destructuring
-
 //      console.log(`Sau khi đổi: a = ${a}, b = ${b}`);
    
 // 5. Tính trung bình của 3 số:
@@ -104,7 +100,6 @@
 //      let num2 = parseInt(prompt("Nhập số thứ hai:"));
 //      let num3 = parseInt(prompt("Nhập số thứ ba:"));
 //      let average = (num1 + num2 + num3) / 3;
-
 //      console.log(`Trung bình: ${average}`);
    
 // 6. Kiểm tra số chẵn/lẻ:
@@ -120,10 +115,8 @@
 //          Counter.count++; // Tăng biến tĩnh mỗi khi tạo đối tượng mới
 //        }
 //      }
-
 //      new Counter(); // Tạo đối tượng mới
 //      new Counter(); // Tạo đối tượng mới
-
 //      console.log(`Số đối tượng được tạo: ${Counter.count}`);
 
 // 8. Lưu thông tin học sinh vào đối tượng:
@@ -133,52 +126,36 @@
 //        name: "John",
 //        grade: "A"
 //      };
-
 //      console.log(`ID: ${student.id}, Tên: ${student.name}, Xếp loại: ${student.grade}`);
 
   
-
 // 1. Khai báo và in thông tin cá nhân
-
 let name = "John";
 let age = 25;
 let country = "Việt Nam";
-
 console.log("Tên:", name);
 console.log("Tuổi:", age);
 console.log("Quốc gia:", country);
 
 
-
-
 // 2. Tính tổng các chữ số
-
 let number = parseInt(prompt("Nhập một số nguyên có ba chữ số:"));
 let hundreds = Math.floor(number / 100);
 let tens = Math.floor((number % 100) / 10);
 let units = number % 10;
-
 let sum = hundreds + tens + units;
 console.log(`Tổng các chữ số của ${number} là: ${sum}`);
 
 
-
-
 // 3. Chuyển đổi nhiệt độ
-
 let celsius = parseFloat(prompt("Nhập nhiệt độ bằng độ C:"));
 let fahrenheit = celsius * 9 / 5 + 32;
-
 console.log(`${celsius}°C = ${fahrenheit}°F`);
 
 
-
-
 // 4. So sánh hai số
-
 let num1 = parseFloat(prompt("Nhập số thứ nhất:"));
 let num2 = parseFloat(prompt("Nhập số thứ hai:"));
-
 if (num1 > num2) {
   console.log(`${num1} lớn hơn ${num2}`);
 } else if (num1 < num2) {
@@ -188,25 +165,17 @@ if (num1 > num2) {
 }
 
 
-
-
 // 5. Tính chu vi và diện tích hình tròn
-
 let radius = parseFloat(prompt("Nhập bán kính hình tròn:"));
 let circumference = 2 * Math.PI * radius;
-let area = Math.PI * radius  2;
-
+let area = Math.PI * radius ;
 console.log(`Chu vi: ${circumference}`);
 console.log(`Diện tích: ${area}`);
 
 
-
-
 // 6. Kiểm tra số nguyên tố
-
 let num = parseInt(prompt("Nhập một số nguyên:"));
 let isPrime = true;
-
 if (num <= 1) {
   isPrime = false;
 } else {
@@ -217,37 +186,27 @@ if (num <= 1) {
     }
   }
 }
-
 console.log(`${num} ${isPrime ? "là số nguyên tố" : "không phải là số nguyên tố"}`);
 
 
-
-
 // 7. Tạo một đối tượng lưu thông tin sản phẩm
-
 let product = {
   id: 101,
   name: "Laptop",
   price: 1500
 };
-
 console.log("Thông tin sản phẩm:");
 console.log(`ID: ${product.id}`);
 console.log(`Tên: ${product.name}`);
 console.log(`Giá: $${product.price}`);
 
 
-
-
 // 8. Tính điểm trung bình và xếp loại
-
 let score1 = parseFloat(prompt("Nhập điểm môn 1:"));
 let score2 = parseFloat(prompt("Nhập điểm môn 2:"));
 let score3 = parseFloat(prompt("Nhập điểm môn 3:"));
-
 let average = (score1 + score2 + score3) / 3;
 let grade = "";
-
 if (average >= 9) {
   grade = "Xuất sắc";
 } else if (average >= 7) {
@@ -257,34 +216,23 @@ if (average >= 9) {
 } else {
   grade = "Yếu";
 }
-
 console.log(`Điểm trung bình: ${average}`);
 console.log(`Xếp loại: ${grade}`);
 
 
-
-
 // 9. Hoán đổi giá trị hai biến sử dụng toán tử XOR
-
 let a = parseInt(prompt("Nhập số thứ nhất (a):"));
 let b = parseInt(prompt("Nhập số thứ hai (b):"));
-
 console.log(`Trước khi đổi: a = ${a}, b = ${b}`);
-
 a = a ^ b;
 b = a ^ b;
 a = a ^ b;
-
 console.log(`Sau khi đổi: a = ${a}, b = ${b}`);
 
 
-
-
 // 10. Kiểm tra ký tự đầu tiên của chuỗi
-
 let input = prompt("Nhập một chuỗi:");
 let firstChar = input.charAt(0);
-
 if (/[a-z]/.test(firstChar)) {
   console.log("Ký tự đầu tiên là chữ cái thường");
 } else if (/[A-Z]/.test(firstChar)) {
