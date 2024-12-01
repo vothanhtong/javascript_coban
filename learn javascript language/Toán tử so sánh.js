@@ -34,7 +34,7 @@ console.log(10 > 5); // true
 //    - Ví dụ:  
 console.log(10 < 5); // false
 
-// 7. Lớn hơn hoặc bằng (`>=`)**  
+// 7. Lớn hơn hoặc bằng (`>=`)  
 //    Kiểm tra xem giá trị bên trái có lớn hơn hoặc bằng giá trị bên phải không.  
 //    - Ví dụ:  
 console.log(5 >= 5); // true
@@ -75,39 +75,76 @@ console.log(aa === bb ? "Hai số bằng nhau" : "Hai số không bằng nhau");
 let numm = parseFloat(prompt("Nhập một số:"));
 console.log(numm > 0 ? "Số lớn hơn 0" : "Số không lớn hơn 0");
 
-// 3. **Bài tập 3:** Kiểm tra số chẵn hay số lẻ.
+// 3. Bài tập 3: Kiểm tra số chẵn hay số lẻ.
 let nums = parseInt(prompt("Nhập một số nguyên:"));
 console.log(nums % 2 === 0 ? "Số chẵn" : "Số lẻ");
 
-// 4. **Bài tập 4:** Kiểm tra một số có thuộc khoảng [10, 20].
+// 4. Bài tập 4: Kiểm tra một số có thuộc khoảng [10, 20].
 let numa = parseFloat(prompt("Nhập một số:"));
 console.log(numa >= 10 && numa <= 20 ? "Số nằm trong khoảng [10, 20]" : "Số không nằm trong khoảng");
 
-// 5. **Bài tập 5:** So sánh hai chuỗi.
+// 5. Bài tập 5: So sánh hai chuỗi.
 let str11 = prompt("Nhập chuỗi thứ nhất:");
 let str22 = prompt("Nhập chuỗi thứ hai:");
 console.log(str11 === str22 ? "Hai chuỗi bằng nhau" : "Hai chuỗi không bằng nhau");
 
-// 6. **Bài tập 6:** So sánh điểm học sinh với ngưỡng đậu.
+// 6. Bài tập 6: So sánh điểm học sinh với ngưỡng đậu.
 let score = parseFloat(prompt("Nhập điểm thi:"));
 console.log(score >= 50 ? "Đậu" : "Rớt");
 
-// 7. **Bài tập 7:** Kiểm tra số nhập vào có phải là số âm.
+// 7. Bài tập 7: Kiểm tra số nhập vào có phải là số âm.
 let num = parseFloat(prompt("Nhập một số:"));
 console.log(num < 0 ? "Số âm" : "Không phải số âm");
 
-// 8. **Bài tập 8:** Xác định số lớn nhất trong 3 số.
+// 8. Bài tập 8: Xác định số lớn nhất trong 3 số.
 let a = parseFloat(prompt("Nhập số thứ nhất:"));
 let b = parseFloat(prompt("Nhập số thứ hai:"));
 let c = parseFloat(prompt("Nhập số thứ ba:"));
 let max = a > b ? (a > c ? a : c) : (b > c ? b : c);
 console.log("Số lớn nhất là:", max);
 
-// 9. **Bài tập 9:** Kiểm tra năm có phải năm nhuận.
+// 9. Bài tập 9: Kiểm tra năm có phải năm nhuận.
 let year = parseInt(prompt("Nhập năm:"));
 console.log((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? "Năm nhuận" : "Không phải năm nhuận");
 
-// 10. **Bài tập 10:** So sánh độ dài hai chuỗi.
+// 10. Bài tập 10: So sánh độ dài hai chuỗi.
 let str1 = prompt("Nhập chuỗi thứ nhất:");
 let str2 = prompt("Nhập chuỗi thứ hai:");
 console.log(str1.length === str2.length ? "Hai chuỗi có độ dài bằng nhau" : "Hai chuỗi có độ dài khác nhau");
+
+// Ứng dụng "Kiểm tra và So sánh thông tin cá nhân
+
+// Cách hoạt động của chương trình:
+// Người dùng nhập tuổi để kiểm tra điều kiện đủ tuổi.
+// So sánh chiều cao giữa hai người.
+// Kiểm tra tính hợp lệ của số điện thoại dựa trên độ dài.
+
+
+alert("Chào mừng bạn đến với ứng dụng kiểm tra thông tin cá nhân!");
+
+// Bước 1: Nhập tuổi và kiểm tra
+let age = parseInt(prompt("Nhập tuổi của bạn:"));
+console.log(age >= 18 ? "Bạn đủ điều kiện (trên 18 tuổi)." : "Bạn chưa đủ điều kiện.");
+
+// Bước 2: Nhập chiều cao của hai người và so sánh
+let height1 = parseFloat(prompt("Nhập chiều cao của bạn (cm):"));
+let height2 = parseFloat(prompt("Nhập chiều cao của bạn thân (cm):"));
+
+if (height1 > height2) {
+    console.log("Bạn cao hơn bạn thân.");
+} else if (height1 < height2) {
+    console.log("Bạn thân cao hơn bạn.");
+} else {
+    console.log("Hai bạn cao bằng nhau.");
+}
+
+// Bước 3: Nhập số điện thoại và kiểm tra độ dài
+let phone = prompt("Nhập số điện thoại của bạn:");
+if (phone.length === 10) {
+    console.log("Số điện thoại hợp lệ.");
+} else {
+    console.log("Số điện thoại không hợp lệ (phải có đúng 10 số).");
+}
+
+// Kết quả
+alert("Kiểm tra hoàn tất! Vui lòng xem kết quả trong console.");
