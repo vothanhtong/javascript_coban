@@ -1,4 +1,6 @@
-//                                                              Xử lý chuỗi trong JavaScript
+// ====================================================
+// Xử lý chuỗi trong JavaScript
+// ====================================================
 
 // 1. Tìm kiếm chuỗi con
 // indexOf(substring): Tìm vị trí đầu tiên của chuỗi con.
@@ -25,20 +27,17 @@
 // charCodeAt(index): Trả về mã ASCII của ký tự tại vị trí index.
 
 // 7. Chuyển chuỗi thành mảng
-// split(separator): Tách chuỗi thành mảng dựa trên ký tự separator.\
+// split(separator): Tách chuỗi thành mảng dựa trên ký tự separator.
 
 // 8. Lặp qua từng ký tự chuỗi
-// Sử dụng vòng lặp để duyệt qua từng ký tự của chuỗi:
-
-
 let str = "Hello";
 for (let i = 0; i < str.length; i++) {
-  console.log(str[i]);
+    console.log(str[i]);
 }
 
-
-
+// ====================================================
 // Bài tập xử lý chuỗi trong JavaScript
+// ====================================================
 
 // 1. Kiểm tra vị trí xuất hiện đầu tiên của một từ
 function findFirstPosition(str, word) {
@@ -94,7 +93,10 @@ function countUpperAndLowerCase(str) {
     return { upper: upperCount, lower: lowerCount };
 }
 
+// ====================================================
 // Chạy thử các hàm
+// ====================================================
+
 let testString = "JavaScript is awesome!";
 
 // 1. Vị trí đầu tiên
