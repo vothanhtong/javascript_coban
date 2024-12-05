@@ -1,7 +1,6 @@
 // Khái niệm Toán tử so sánh trong JavaScript
 // Toán tử so sánh là các ký hiệu được sử dụng để so sánh hai giá trị. 
 // Kết quả của các phép so sánh là `true` hoặc `false`, và thường được dùng trong các câu lệnh điều kiện như `if`, `else`.
-
 //  Các loại toán tử so sánh trong JavaScript
 
 // 1. So sánh bằng (`==`) 
@@ -117,8 +116,7 @@ console.log(str1.length === str2.length ? "Hai chuỗi có độ dài bằng nha
 // Cách hoạt động của chương trình:
 // Người dùng nhập tuổi để kiểm tra điều kiện đủ tuổi.
 // So sánh chiều cao giữa hai người.
-// Kiểm tra tính hợp lệ của số điện thoại dựa trên độ dài.
-
+// Kiểm tra tính hợp lệ của số điện thoại dựa trên độ dài
 
 alert("Chào mừng bạn đến với ứng dụng kiểm tra thông tin cá nhân!");
 
@@ -137,7 +135,6 @@ if (height1 > height2) {
 } else {
     console.log("Hai bạn cao bằng nhau.");
 }
-
 // Bước 3: Nhập số điện thoại và kiểm tra độ dài
 let phone = prompt("Nhập số điện thoại của bạn:");
 if (phone.length === 10) {
@@ -145,6 +142,5 @@ if (phone.length === 10) {
 } else {
     console.log("Số điện thoại không hợp lệ (phải có đúng 10 số).");
 }
-
 // Kết quả
 alert("Kiểm tra hoàn tất! Vui lòng xem kết quả trong console.");

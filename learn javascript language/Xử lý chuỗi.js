@@ -95,7 +95,6 @@ console.log("split:", text.split(" ")); // Output: ["JavaScript", "is", "awesome
 for (let char of text) {
     console.log("Character:", char);
 }
-
 // =======================================================
 // Các hàm xử lý chuỗi nâng cao
 // =======================================================
@@ -157,7 +156,6 @@ function countCase(input) {
     }
     return { uppercase, lowercase };
 }
-
 // =======================================================
 // Test các hàm
 // =======================================================
@@ -229,7 +227,6 @@ function iterateCharacters(input) {
         console.log(char);
     }
 }
-
 // 10. Đếm số ký tự in hoa và in thường
 function countCase(input) {
     let uppercase = 0, lowercase = 0;
@@ -239,7 +236,6 @@ function countCase(input) {
     }
     return { uppercase, lowercase };
 }
-
 // ======================
 // Test các hàm
 let testString = "JavaScript is amazing!";

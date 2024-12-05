@@ -3,9 +3,7 @@
 // 3. Lưu trữ lịch sử nhập liệu: Lưu trữ các mật khẩu và số đã nhập để có thể hiển thị lại sau khi kết thúc chương trình.
 // 4. Chạy lại chương trình: Cung cấp tùy chọn cho người dùng để chạy lại chương trình từ đầu nếu muốn.
 // 5. Hiển thị kết quả rõ ràng hơn: Tạo giao diện đầu ra đẹp hơn và dễ đọc hơn.
-
 // Dưới đây là mã đã nâng cấp với các tính năng này:
-
 
 function main() {
   function isPasswordStrong(password) {
@@ -46,7 +44,6 @@ function main() {
   }
   
   let history = []; // Lưu lịch sử nhập liệu
-
   // Bài 1: Tính tổng và kiểm tra chẵn lẻ
   const t = parseFloat(prompt("Nhập số thứ nhất:"));
   const m = parseFloat(prompt("Nhập số thứ hai:"));
@@ -121,8 +118,6 @@ function main() {
 
 // Gọi hàm chính để chạy toàn bộ chương trình
 main();
-
-
 
 // Các điểm nâng cấp:
 // 1. Quy tắc mật khẩu: Mật khẩu phải chứa chữ hoa, chữ thường, số và ký tự đặc biệt.

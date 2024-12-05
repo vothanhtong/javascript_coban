@@ -1,5 +1,4 @@
 // QUẢN LÝ THỜI KHÓA BIỂU 
-
 // 1. Menu chính:  
 //    - 1: Thêm sự kiện  
 //    - 2: Xem lịch trình  
@@ -22,7 +21,6 @@
 //    - Kết thúc chương trình.  
 
 const duLieuNgoai = [];
-
 function hienThiMenu() {
     console.log("1. Thêm sự kiện mới");
     console.log("2. Xem lịch trình");

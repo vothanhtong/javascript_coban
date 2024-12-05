@@ -9,7 +9,6 @@
 //     - `const` dùng để khai báo hằng số, tức là biến không thể thay đổi giá trị sau khi được khởi tạo.
 //   - Giá trị có thể thay đổi (trừ `const`): Với biến được khai báo bằng `let` và `var`, giá trị có thể thay đổi trong quá trình thực thi, nhưng giá trị của biến `const` không thể thay đổi sau khi được gán.
 
-
 // 2. Phân loại biến
 // 1. Biến cục bộ (Local Variable):  
 //    - Khai báo trong hàm hoặc block code.
