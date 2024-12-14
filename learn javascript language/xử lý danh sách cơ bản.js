@@ -1,4 +1,6 @@
-// **Xử lý danh sách cơ bản trong JavaScript**
+Dưới đây là mã JavaScript hoàn chỉnh mà bạn đã cung cấp để xử lý danh sách cơ bản. Mã này trình bày cách làm việc với mảng (arrays) trong JavaScript, bao gồm việc tạo danh sách, truy cập và sửa đổi phần tử, thêm và xóa phần tử, duyệt danh sách, và thực hiện các thao tác như sắp xếp, lọc, và tính toán. Tôi cũng đã giữ lại phần bài tập thực hành:
+
+// Xử lý danh sách cơ bản trong JavaScript
 
 // 1. Tạo danh sách
 const fruits = ["Apple", "Banana", "Cherry"];
@@ -30,7 +32,7 @@ const numbers = [1, 2, 3, 4, 5];
 const evenNumbers = numbers.filter(num => num % 2 === 0); // Lọc số chẵn
 console.log("Số chẵn:", evenNumbers);
 
-const squares = numbers.map(num => num ** 2); // Bình phương
+const squares = numbers.map(num => num  2); // Bình phương
 console.log("Bình phương:", squares);
 
 const total = numbers.reduce((sum, num) => sum + num, 0); // Tính tổng
@@ -69,3 +71,14 @@ function filterGreaterThan(arr, n) {
     return arr.filter(item => item > n);
 }
 console.log("Lọc > 2:", filterGreaterThan([1, 2, 3, 4], 2));
+
+// ### Mô Tả Các Chức Năng
+// 1. Tạo danh sách: Khởi tạo một mảng `fruits` và in ra danh sách ban đầu.
+// 2. Truy cập và sửa đổi phần tử: Truy cập phần tử đầu tiên và sửa đổi phần tử thứ hai.
+// 3. Thêm và xóa phần tử: Sử dụng các phương thức `push`, `unshift`, `pop`, và `shift` để thêm và xóa phần tử trong danh sách.
+// 4. Duyệt danh sách: Sử dụng `forEach` để duyệt từng phần tử trong mảng.
+// 5. Sắp xếp và đảo ngược: Sắp xếp danh sách tăng dần và sau đó đảo ngược nó.
+// 6. Lọc, biến đổi, gộp phần tử: Sử dụng `filter`, `map`, và `reduce` để thực hiện các thao tác trên mảng số.
+// 7. Tìm kiếm: Tìm kiếm phần tử đầu tiên và vị trí của số chẵn trong mảng.
+// 8. Kiểm tra điều kiện: Kiểm tra xem tất cả các số trong mảng đều lớn hơn 0 và có ít nhất một số lớn hơn 3 hay không.
+// 9. Bài tập thực hành: Các hàm để tìm số lớn nhất, tính tổng số lẻ, đếm số lần xuất hiện của một giá trị, đảo ngược mảng, và lọc mảng theo điều kiện.
