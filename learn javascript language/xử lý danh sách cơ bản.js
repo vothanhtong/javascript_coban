@@ -1,4 +1,4 @@
-Dưới đây là mã JavaScript hoàn chỉnh mà bạn đã cung cấp để xử lý danh sách cơ bản. Mã này trình bày cách làm việc với mảng (arrays) trong JavaScript, bao gồm việc tạo danh sách, truy cập và sửa đổi phần tử, thêm và xóa phần tử, duyệt danh sách, và thực hiện các thao tác như sắp xếp, lọc, và tính toán. Tôi cũng đã giữ lại phần bài tập thực hành:
+// Dưới đây là mã JavaScript hoàn chỉnh mà bạn đã cung cấp để xử lý danh sách cơ bản. Mã này trình bày cách làm việc với mảng (arrays) trong JavaScript, bao gồm việc tạo danh sách, truy cập và sửa đổi phần tử, thêm và xóa phần tử, duyệt danh sách, và thực hiện các thao tác như sắp xếp, lọc, và tính toán. Tôi cũng đã giữ lại phần bài tập thực hành:
 
 // Xử lý danh sách cơ bản trong JavaScript
 
@@ -32,7 +32,7 @@ const numbers = [1, 2, 3, 4, 5];
 const evenNumbers = numbers.filter(num => num % 2 === 0); // Lọc số chẵn
 console.log("Số chẵn:", evenNumbers);
 
-const squares = numbers.map(num => num  2); // Bình phương
+const squares = numbers.map(num => num  ); // Bình phương
 console.log("Bình phương:", squares);
 
 const total = numbers.reduce((sum, num) => sum + num, 0); // Tính tổng
