@@ -103,18 +103,3 @@ function baiTap10() {
         });
 }
 
-// Gọi các bài tập
-function main() {
-    baiTap1();
-    baiTap2(); // Lưu ý: Tạo tệp example.txt trước khi chạy
-    baiTap3(); // Lưu ý: Tạo tệp myModule.js trước khi chạy
-    baiTap4();
-    baiTap5();
-    baiTap6(); // Lưu ý: Tạo tệp factorialModule.js trước khi chạy
-    baiTap7();
-    baiTap8();
-    baiTap9();
-    baiTap10(); // Lưu ý: Cài thư viện axios bằng npm
-}
-
-main();
