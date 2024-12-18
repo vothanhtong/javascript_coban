@@ -1,61 +1,49 @@
-// BÀI 1: TÍNH TỔNG HAI SỐ 
-const a = 5;
-const b = 10;
-console.log("Tổng của hai số a và b là:", a + b);
-
-// Yêu cầu người dùng nhập vào
+// Bài 1: Tính tổng hai số
+console.log("Bài 1: Tính tổng hai số");
+const a = 5, b = 10;
+console.log(`Tổng của a và b là: ${a + b}`);
 const c = parseFloat(prompt("Nhập vào số thứ nhất (a):"));
 const d = parseFloat(prompt("Nhập vào số thứ hai (b):"));
-console.log("Tổng của hai số bạn nhập là:", c + d);
+console.log(`Tổng của hai số bạn nhập là: ${c + d}`);
 
-// BÀI 2: KIỂM TRA SỐ CHẴN LẺ
+// Bài 2: Kiểm tra số chẵn lẻ
+console.log("\nBài 2: Kiểm tra số chẵn lẻ");
 const s = parseInt(prompt("Nhập vào một số:"));
-if (s % 2 === 0) {
-    console.log(`${s} là số chẵn.`);
-} else {
-    console.log(`${s} là số lẻ.`);
-}
+console.log(`${s} là số ${s % 2 === 0 ? "chẵn" : "lẻ"}.`);
 
-// BÀI 3: TÍNH GIAI THỪA CỦA MỘT SỐ
+// Bài 3: Tính giai thừa
+console.log("\nBài 3: Tính giai thừa");
 const v = parseInt(prompt("Nhập vào một số nguyên dương:"));
 if (v < 0) {
     console.log("Vui lòng nhập một số nguyên dương!");
 } else {
     let factorial = 1;
-    for (let i = 1; i <= v; i++) {
-        factorial *= i;
-    }
+    for (let i = 1; i <= v; i++) factorial *= i;
     console.log(`Giai thừa của ${v} là: ${factorial}`);
 }
 
-// BÀI 4: IN RA CÁC SỐ CHẴN TỪ 1 ĐẾN 20
-console.log("Các số chẵn từ 1 đến 20 là:");
-for (let i = 2; i <= 20; i += 2) {
-    console.log(i);
-}
+// Bài 4: In các số chẵn từ 1 đến 20
+console.log("\nBài 4: In các số chẵn từ 1 đến 20");
+for (let i = 2; i <= 20; i += 2) console.log(i);
 
-// BÀI 5: KIỂM TRA MẬT KHẨU
+// Bài 5: Kiểm tra mật khẩu
+console.log("\nBài 5: Kiểm tra mật khẩu");
 const password = prompt("Nhập mật khẩu:");
-if (password === "javascript") {
-    console.log("Mật khẩu đúng.");
-} else {
-    console.log("Mật khẩu sai.");
-}
+console.log(password === "javascript" ? "Mật khẩu đúng." : "Mật khẩu sai.");
 
-// BÀI 6: TÍNH DIỆN TÍCH HÌNH TRÒN
+// Bài 6: Tính diện tích hình tròn
+console.log("\nBài 6: Tính diện tích hình tròn");
 const r = 7;
-const pi = Math.PI;
-console.log(`Diện tích hình tròn có bán kính ${r} là:`, pi * r ** 2);
+console.log(`Diện tích hình tròn bán kính ${r} là: ${(Math.PI * r ** 2).toFixed(2)}`);
 
-// BÀI 7: KIỂM TRA NĂM NHUẬN
+// Bài 7: Kiểm tra năm nhuận
+console.log("\nBài 7: Kiểm tra năm nhuận");
 const year = parseInt(prompt("Nhập vào một năm:"));
-if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-    console.log(`${year} là năm nhuận.`);
-} else {
-    console.log(`${year} không phải là năm nhuận.`);
-}
+const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+console.log(`${year} là năm ${isLeapYear ? "nhuận" : "không phải năm nhuận"}.`);
 
-// BÀI 8: KIỂM TRA SỐ NGUYÊN TỐ
+// Bài 8: Kiểm tra số nguyên tố
+console.log("\nBài 8: Kiểm tra số nguyên tố");
 const num = parseInt(prompt("Nhập vào một số nguyên dương:"));
 if (num < 2) {
     console.log(`${num} không phải là số nguyên tố.`);
@@ -67,23 +55,18 @@ if (num < 2) {
             break;
         }
     }
-    console.log(isPrime ? `${num} là số nguyên tố.` : `${num} không phải là số nguyên tố.`);
+    console.log(`${num} ${isPrime ? "là" : "không phải là"} số nguyên tố.`);
 }
 
-// BÀI 9: TÍNH TỔNG CÁC SỐ CHẴN TỪ 1 ĐẾN N
+// Bài 9: Tính tổng các số chẵn từ 1 đến n
+console.log("\nBài 9: Tính tổng các số chẵn từ 1 đến n");
 const n = parseInt(prompt("Nhập vào số nguyên dương n:"));
-if (n < 1) {
-    console.log("Vui lòng nhập số lớn hơn 0.");
-} else {
-    let sumEven = 0;
-    for (let i = 2; i <= n; i += 2) {
-        sumEven += i;
-    }
-    console.log(`Tổng các số chẵn từ 1 đến ${n} là: ${sumEven}`);
-}
+let sumEven = 0;
+for (let i = 2; i <= n; i += 2) sumEven += i;
+console.log(`Tổng các số chẵn từ 1 đến ${n} là: ${sumEven}`);
 
-// BÀI 10: IN BẢNG CỬU CHƯƠNG TỪ 1 ĐẾN 10
-console.log("Bảng cửu chương từ 1 đến 10:");
+// Bài 10: In bảng cửu chương từ 1 đến 10
+console.log("\nBài 10: In bảng cửu chương từ 1 đến 10");
 for (let i = 1; i <= 10; i++) {
     for (let j = 1; j <= 10; j++) {
         console.log(`${i} x ${j} = ${i * j}`);
