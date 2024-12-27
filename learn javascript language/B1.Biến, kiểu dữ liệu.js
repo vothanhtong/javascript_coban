@@ -1,5 +1,6 @@
 // 1. Khai báo và in thông tin cá nhân
 function printPersonalInfo() {
+  console.log("=== Bài 1: Khai báo và in thông tin cá nhân ===");
   const name = "John";
   const age = 25;
   const country = "Việt Nam";
@@ -9,21 +10,22 @@ printPersonalInfo();
 
 // 2. Tính tổng các chữ số
 function sumOfDigits() {
+  console.log("\n=== Bài 2: Tính tổng các chữ số ===");
   const number = parseInt(prompt("Nhập một số nguyên có ba chữ số:"));
-  if (!number || number < 100 || number > 999) {
+  if (isNaN(number) || number < 100 || number > 999) {
     console.log("Vui lòng nhập một số nguyên có đúng ba chữ số.");
     return;
   }
   const hundreds = Math.floor(number / 100);
   const tens = Math.floor((number % 100) / 10);
   const units = number % 10;
-  const sum = hundreds + tens + units;
-  console.log(`Tổng các chữ số của ${number} là: ${sum}`);
+  console.log(`Tổng các chữ số của ${number} là: ${hundreds + tens + units}`);
 }
 sumOfDigits();
 
 // 3. Chuyển đổi nhiệt độ
 function convertTemperature() {
+  console.log("\n=== Bài 3: Chuyển đổi nhiệt độ ===");
   const celsius = parseFloat(prompt("Nhập nhiệt độ bằng độ C:"));
   if (isNaN(celsius)) {
     console.log("Vui lòng nhập một số hợp lệ.");
@@ -36,6 +38,7 @@ convertTemperature();
 
 // 4. So sánh hai số
 function compareTwoNumbers() {
+  console.log("\n=== Bài 4: So sánh hai số ===");
   const num1 = parseFloat(prompt("Nhập số thứ nhất:"));
   const num2 = parseFloat(prompt("Nhập số thứ hai:"));
   if (isNaN(num1) || isNaN(num2)) {
@@ -43,13 +46,14 @@ function compareTwoNumbers() {
     return;
   }
   console.log(num1 === num2 
-    ? "Hai số bằng nhau" 
-    : `${Math.max(num1, num2)} lớn hơn ${Math.min(num1, num2)}`);
+    ? "Hai số bằng nhau." 
+    : `${Math.max(num1, num2)} lớn hơn ${Math.min(num1, num2)}.`);
 }
 compareTwoNumbers();
 
 // 5. Tính chu vi và diện tích hình tròn
 function circleCalculations() {
+  console.log("\n=== Bài 5: Tính chu vi và diện tích hình tròn ===");
   const radius = parseFloat(prompt("Nhập bán kính hình tròn:"));
   if (isNaN(radius) || radius <= 0) {
     console.log("Vui lòng nhập bán kính hợp lệ (lớn hơn 0).");
@@ -63,9 +67,10 @@ circleCalculations();
 
 // 6. Kiểm tra số nguyên tố
 function checkPrime() {
+  console.log("\n=== Bài 6: Kiểm tra số nguyên tố ===");
   const num = parseInt(prompt("Nhập một số nguyên:"));
   if (isNaN(num) || num < 2) {
-    console.log("Số phải lớn hơn hoặc bằng 2.");
+    console.log("Vui lòng nhập một số nguyên lớn hơn hoặc bằng 2.");
     return;
   }
   let isPrime = true;
@@ -75,12 +80,13 @@ function checkPrime() {
       break;
     }
   }
-  console.log(`${num} ${isPrime ? "là số nguyên tố" : "không phải là số nguyên tố"}`);
+  console.log(`${num} ${isPrime ? "là số nguyên tố" : "không phải là số nguyên tố"}.`);
 }
 checkPrime();
 
 // 7. Tạo đối tượng lưu thông tin sản phẩm
 function productInfo() {
+  console.log("\n=== Bài 7: Tạo đối tượng lưu thông tin sản phẩm ===");
   const product = {
     id: 101,
     name: "Laptop",
@@ -92,6 +98,7 @@ productInfo();
 
 // 8. Tính điểm trung bình và xếp loại
 function calculateAverageGrade() {
+  console.log("\n=== Bài 8: Tính điểm trung bình và xếp loại ===");
   const scores = [
     parseFloat(prompt("Nhập điểm môn 1:")),
     parseFloat(prompt("Nhập điểm môn 2:")),
@@ -112,6 +119,7 @@ calculateAverageGrade();
 
 // 9. Hoán đổi giá trị hai biến bằng XOR
 function swapValues() {
+  console.log("\n=== Bài 9: Hoán đổi giá trị hai biến bằng XOR ===");
   let a = parseInt(prompt("Nhập số thứ nhất (a):"));
   let b = parseInt(prompt("Nhập số thứ hai (b):"));
   if (isNaN(a) || isNaN(b)) {
@@ -128,6 +136,7 @@ swapValues();
 
 // 10. Kiểm tra ký tự đầu tiên của chuỗi
 function checkFirstCharacter() {
+  console.log("\n=== Bài 10: Kiểm tra ký tự đầu tiên của chuỗi ===");
   const input = prompt("Nhập một chuỗi:");
   if (!input) {
     console.log("Vui lòng nhập một chuỗi không rỗng.");
