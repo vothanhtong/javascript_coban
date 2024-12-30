@@ -29,12 +29,12 @@ console.log("charCodeAt:", text.charCodeAt(0)); // Mã ASCII của ký tự đ�
 // 7. Chuyển chuỗi thành mảng
 console.log("split:", text.split(" ")); // Chuyển chuỗi thành mảng tách bởi khoảng trắng
 
-// 8. Lặp qua từng ký tự của chuỗi// =======================================================
+// 8. Lặp qua từng ký tự của chuỗi
 //  Lý thuyết chi tiết về xử lý chuỗi trong JavaScript
-// =======================================================
+
 
 // 1. Tìm kiếm chuỗi con
-// ------------------------------------
+
 // indexOf(substring): Tìm vị trí xuất hiện đầu tiên của chuỗi con
 let text = "JavaScript is awesome!";
 console.log("indexOf:", text.indexOf("is")); // Output: 11
@@ -46,7 +46,7 @@ console.log("lastIndexOf:", text.lastIndexOf("is")); // Output: 11
 console.log("search:", text.search(/is/)); // Output: 11
 
 // 2. Cắt chuỗi
-// ------------------------------------
+
 // slice(start, end): Trả về một phần chuỗi từ `start` đến `end` (không bao gồm end)
 console.log("slice:", text.slice(0, 10)); // Output: "JavaScript"
 
@@ -57,7 +57,7 @@ console.log("substring:", text.substring(0, 10)); // Output: "JavaScript"
 console.log("substr:", text.substr(0, 10)); // Output: "JavaScript"
 
 // 3. Thay thế chuỗi
-// ------------------------------------
+
 // replace(searchValue, replaceValue): Thay chuỗi con đầu tiên tìm được
 console.log("replace:", text.replace("awesome", "great")); // Output: "JavaScript is great!"
 
@@ -65,7 +65,7 @@ console.log("replace:", text.replace("awesome", "great")); // Output: "JavaScrip
 console.log("replaceAll:", text.replaceAll("is", "was")); // Output: "JavaScript was awesome!"
 
 // 4. Chuyển đổi chữ hoa/chữ thường
-// ------------------------------------
+
 // toUpperCase(): Chuyển toàn bộ chuỗi thành chữ hoa
 console.log("toUpperCase:", text.toUpperCase()); // Output: "JAVASCRIPT IS AWESOME!"
 
@@ -73,12 +73,12 @@ console.log("toUpperCase:", text.toUpperCase()); // Output: "JAVASCRIPT IS AWESO
 console.log("toLowerCase:", text.toLowerCase()); // Output: "javascript is awesome!"
 
 // 5. Nối chuỗi
-// ------------------------------------
+
 // Toán tử + hoặc concat(): Dùng để nối các chuỗi
 console.log("Concatenation:", "JavaScript" + " is awesome!"); // Output: "JavaScript is awesome!"
 
 // 6. Lấy ký tự hoặc mã ASCII
-// ------------------------------------
+
 // charAt(index): Lấy ký tự tại vị trí index
 console.log("charAt:", text.charAt(0)); // Output: "J"
 
@@ -86,18 +86,18 @@ console.log("charAt:", text.charAt(0)); // Output: "J"
 console.log("charCodeAt:", text.charCodeAt(0)); // Output: 74
 
 // 7. Chuyển chuỗi thành mảng
-// ------------------------------------
+
 // split(separator): Tách chuỗi thành mảng dựa trên ký tự phân tách separator
 console.log("split:", text.split(" ")); // Output: ["JavaScript", "is", "awesome!"]
 
 // 8. Lặp qua từng ký tự của chuỗi
-// ------------------------------------
+
 for (let char of text) {
     console.log("Character:", char);
 }
-// =======================================================
+
 // Các hàm xử lý chuỗi nâng cao
-// =======================================================
+
 
 // 1. Tìm vị trí đầu tiên của từ
 function getFirstOccurrence(input, word) {
@@ -156,9 +156,9 @@ function countCase(input) {
     }
     return { uppercase, lowercase };
 }
-// =======================================================
+
 // Test các hàm
-// =======================================================
+
 let testStringg = "JavaScript is amazing!";
 console.log("\n==== TESTING ====");
 console.log("1. Vị trí xuất hiện:", getFirstOccurrence(testString, "JavaScript"));
