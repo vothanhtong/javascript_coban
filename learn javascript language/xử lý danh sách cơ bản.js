@@ -82,3 +82,60 @@ console.log("Lọc > 2:", filterGreaterThan([1, 2, 3, 4], 2));
 // 7. Tìm kiếm: Tìm kiếm phần tử đầu tiên và vị trí của số chẵn trong mảng.
 // 8. Kiểm tra điều kiện: Kiểm tra xem tất cả các số trong mảng đều lớn hơn 0 và có ít nhất một số lớn hơn 3 hay không.
 // 9. Bài tập thực hành: Các hàm để tìm số lớn nhất, tính tổng số lẻ, đếm số lần xuất hiện của một giá trị, đảo ngược mảng, và lọc mảng theo điều kiện.
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò chơi đoán số</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .history { margin-top: 20px; }
+        .correct { color: green; font-weight: bold; }
+        .incorrect { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Trò chơi đoán số</h1>
+    <p>Máy tính đã chọn một số từ 1 đến 100. Hãy thử đoán!</p>
+    <input type="number" id="guess" placeholder="Nhập số của bạn">
+    <button onclick="checkGuess()">Đoán</button>
+    <p id="message"></p>
+    
+    <h2>Lịch sử đoán</h2>
+    <ul id="history" class="history"></ul>
+    
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = [];
+
+        function checkGuess() {
+            let guess = parseInt(document.getElementById('guess').value);
+            let message = document.getElementById('message');
+            let historyList = document.getElementById('history');
+            
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                message.textContent = 'Vui lòng nhập số từ 1 đến 100!';
+                return;
+            }
+            
+            attempts.push(guess);
+            let listItem = document.createElement('li');
+            
+            if (guess === randomNumber) {
+                message.innerHTML = `<span class='correct'>Chúc mừng! Bạn đã đoán đúng số ${randomNumber}!</span>`;
+                listItem.innerHTML = `<span class='correct'>${guess} - Đúng!</span>`;
+            } else if (guess < randomNumber) {
+                message.textContent = 'Số của bạn quá thấp! Thử lại nhé.';
+                listItem.innerHTML = `<span class='incorrect'>${guess} - Quá thấp!</span>`;
+            } else {
+                message.textContent = 'Số của bạn quá cao! Thử lại nhé.';
+                listItem.innerHTML = `<span class='incorrect'>${guess} - Quá cao!</span>`;
+            }
+            
+            historyList.appendChild(listItem);
+            document.getElementById('guess').value = '';
+        }
+    </script>
+</body>
+</html>
