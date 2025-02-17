@@ -1,105 +1,110 @@
-// Tóm tắt lý thuyết về Mô-đun trong JavaScript
+// ========================
+// LÝ THUYẾT VỀ MÔ-ĐUN
+// ========================
 
-// 1. Mô-đun là gì?
-//    - Mô-đun trong JavaScript là các tệp chứa mã (hàm, biến, lớp) được xuất (export) ra và sử dụng lại bằng cách nhập (import) vào tệp khác.
+// 1️⃣ Mô-đun là gì?
+//    - Mô-đun giúp tách mã thành các tệp nhỏ, dễ bảo trì và tái sử dụng.
+//    - Dùng `export` để xuất dữ liệu và `import` để nhập dữ liệu.
 
-// 2. Sử dụng mô-đun:
-//    - `export` để xuất các thành phần trong mô-đun.
-//    - `import` để nhập các thành phần từ mô-đun.
+// 2️⃣ Các loại mô-đun:
+//    - Mô-đun tích hợp sẵn trong Node.js (vd: `fs`, `path`, `http`).
+//    - Mô-đun bên ngoài (cài bằng npm, vd: `axios`, `lodash`).
+//    - Mô-đun tự tạo (viết riêng và import vào tệp khác).
 
-// 3. Ví dụ về mô-đun tích hợp (built-in modules):
-//    - Trong Node.js: `fs`, `path`, `http`.
+// ========================
+// BÀI TẬP THỰC HÀNH
+// ========================
 
-// 4. Thư viện bên ngoài:
-//    - Cài đặt bằng `npm install package_name`.
-
-// 5. Module ES6:
-//    - Sử dụng cú pháp `import/export` và chạy với trình duyệt hoặc môi trường hỗ trợ ES6.
-
-
-// Bài tập thực hành với mô-đun
-
-// Bài tập 1: Sử dụng mô-đun tích hợp path để lấy tên tệp
+// 1️⃣ Lấy tên tệp hiện tại bằng mô-đun path
 const path = require('path');
 function baiTap1() {
-    console.log("Tên tệp hiện tại là:", path.basename(__filename));
+    console.log("Tên tệp hiện tại:", path.basename(__filename));
 }
 
-// Bài tập 2: Sử dụng mô-đun fs để đọc nội dung một tệp
+// 2️⃣ Đọc nội dung tệp bằng mô-đun fs
 const fs = require('fs');
 function baiTap2() {
     fs.readFile('./example.txt', 'utf8', (err, data) => {
-        if (err) {
-            console.error("Lỗi khi đọc tệp:", err);
-            return;
-        }
+        if (err) return console.error("Lỗi đọc tệp:", err);
         console.log("Nội dung tệp:", data);
     });
 }
 
-// Bài tập 3: Tạo một mô-đun riêng và sử dụng nó
-// Tạo tệp myModule.js với nội dung:
-// module.exports = {
-//     greet: (name) => `Hello, ${name}!`,
-//     pi: 3.14159
-// };
+// 3️⃣ Sử dụng mô-đun tự tạo (myModule.js)
 function baiTap3() {
-    const myModule = require('./myModule');
-    console.log(myModule.greet("Tòng"));
-    console.log("Giá trị của pi là:", myModule.pi);
+    try {
+        const myModule = require('./myModule');
+        console.log(myModule.greet("Tòng"));
+        console.log("Giá trị của pi:", myModule.pi);
+    } catch (err) {
+        console.error("Không thể tải mô-đun myModule:", err.message);
+    }
 }
 
-// Bài tập 4: Tính diện tích hình tròn bằng mô-đun Math
+// 4️⃣ Tính diện tích hình tròn
 function baiTap4() {
     const radius = 5;
-    const area = Math.PI * Math.pow(radius, 2);
-    console.log("Diện tích hình tròn bán kính 5 là:", area);
+    console.log(`Diện tích hình tròn (r = ${radius}):`, (Math.PI * radius ** 2).toFixed(2));
 }
 
-// Bài tập 5: Lấy ngày và giờ hiện tại bằng mô-đun Date
+// 5️⃣ Lấy ngày & giờ hiện tại
 function baiTap5() {
-    const now = new Date();
-    console.log("Ngày và giờ hiện tại là:", now);
+    console.log("Ngày và giờ hiện tại:", new Date().toLocaleString());
 }
 
-// Bài tập 6: Tạo và sử dụng một mô-đun chứa hàm tính giai thừa
-// Tạo tệp factorialModule.js với nội dung:
-// module.exports = {
-//     factorial: (n) => n === 0 ? 1 : n * module.exports.factorial(n - 1)
-// };
+// 6️⃣ Sử dụng mô-đun factorialModule để tính giai thừa
 function baiTap6() {
-    const { factorial } = require('./factorialModule');
-    console.log("Giai thừa của 5 là:", factorial(5));
+    try {
+        const { factorial } = require('./factorialModule');
+        console.log("Giai thừa của 5:", factorial(5));
+    } catch (err) {
+        console.error("Không thể tải mô-đun factorialModule:", err.message);
+    }
 }
 
-// Bài tập 7: Tạo danh sách số ngẫu nhiên và tìm giá trị lớn nhất, nhỏ nhất
+// 7️⃣ Tạo danh sách số ngẫu nhiên và tìm min/max
 function baiTap7() {
     const numbers = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100) + 1);
     console.log("Danh sách số:", numbers);
-    console.log("Giá trị lớn nhất:", Math.max(...numbers));
-    console.log("Giá trị nhỏ nhất:", Math.min(...numbers));
+    console.table({ "Số lớn nhất": Math.max(...numbers), "Số nhỏ nhất": Math.min(...numbers) });
 }
 
-// Bài tập 8: Sử dụng mô-đun os để lấy thông tin hệ điều hành
+// 8️⃣ Lấy thông tin hệ điều hành bằng mô-đun os
 const os = require('os');
 function baiTap8() {
-    console.log("Thông tin hệ điều hành:", os.type(), os.platform(), os.arch());
+    console.table({
+        "Hệ điều hành": os.type(),
+        "Nền tảng": os.platform(),
+        "Kiến trúc": os.arch()
+    });
 }
 
-// Bài tập 9: Sử dụng process để lấy thông tin phiên bản Node.js đang chạy
+// 9️⃣ Lấy phiên bản Node.js đang chạy
 function baiTap9() {
-    console.log("Phiên bản Node.js đang sử dụng:", process.version);
+    console.log("Phiên bản Node.js:", process.version);
 }
 
-// Bài tập 10: Sử dụng axios để lấy nội dung từ một trang web (cần cài axios)
+// 🔟 Gọi API bằng axios (sử dụng async/await)
 const axios = require('axios');
-function baiTap10() {
-    axios.get('https://jsonplaceholder.typicode.com/posts/1')
-        .then(response => {
-            console.log("Dữ liệu từ API:", response.data);
-        })
-        .catch(error => {
-            console.error("Lỗi khi gọi API:", error);
-        });
+async function baiTap10() {
+    try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
+        console.log("Dữ liệu từ API:", response.data);
+    } catch (error) {
+        console.error("Lỗi khi gọi API:", error.message);
+    }
 }
 
+// ========================
+// GỌI HÀM ĐỂ CHẠY
+// ========================
+baiTap1();
+baiTap2();
+baiTap3();
+baiTap4();
+baiTap5();
+baiTap6();
+baiTap7();
+baiTap8();
+baiTap9();
+baiTap10();
