@@ -1,160 +1,112 @@
-// QUẢN LÝ THỜI KHÓA BIỂU 
-// 1. Menu chính:  
-//    - 1: Thêm sự kiện  
-//    - 2: Xem lịch trình  
-//    - 3: Chỉnh sửa sự kiện  
-//    - 4: Thoát  
+const duLieuNgoai = JSON.parse(localStorage.getItem("duLieuNgoai")) || [];
 
-// 2. Thêm sự kiện (1):  
-//    - Nhập thông tin: Tháng, Tuần, Ngày, Thời gian, Tên, Chi tiết, Quan trọng.  
-//    - Kiểm tra trùng, có thể hợp nhất nếu cần.  
+function luuDuLieu() {
+    localStorage.setItem("duLieuNgoai", JSON.stringify(duLieuNgoai));
+}
 
-// 3. Xem lịch trình (2):  
-//    - Hiển thị danh sách sự kiện đã lưu.  
-//    - Thông báo "Không có sự kiện" nếu danh sách rỗng.  
-
-// 4. Chỉnh sửa sự kiện (3):  
-//    - Tìm sự kiện theo Tháng, Tuần, Ngày.  
-//    - Tùy chọn: Thêm chi tiết, sửa thông tin, xóa sự kiện.  
-
-// 5. Thoát (4):  
-//    - Kết thúc chương trình.  
-
-const duLieuNgoai = [];
 function hienThiMenu() {
+    console.log("=== QUẢN LÝ THỜI KHÓA BIỂU ===");
     console.log("1. Thêm sự kiện mới");
     console.log("2. Xem lịch trình");
     console.log("3. Chỉnh sửa sự kiện");
-    console.log("4. Thoát");
+    console.log("4. Tìm kiếm sự kiện");
+    console.log("5. Xóa tất cả sự kiện");
+    console.log("6. Thoát");
+}
+
+function nhapThongTinSuKien() {
+    return {
+        Thang: prompt("Nhập tháng:").trim(),
+        Tuan: prompt("Nhập tuần:").trim(),
+        Ngay: prompt("Nhập ngày:").trim(),
+        ThoiGianBatDau: prompt("Nhập thời gian bắt đầu:").trim(),
+        ThoiGianKetThuc: prompt("Nhập thời gian kết thúc:").trim(),
+        TenSuKien: prompt("Nhập tên sự kiện:").trim(),
+        ChiTietSuKien: prompt("Nhập chi tiết sự kiện:").trim(),
+        QuanTrong: prompt("Sự kiện có quan trọng không? (Có/Không):").trim()
+    };
 }
 
 function themSuKienVaoThoiKhoaBieu() {
-    while (true) {
-        const suKien = {};
-        suKien.Thang = prompt("Nhập tháng:");
-        suKien.Tuan = prompt("Nhập tuần:");
-        suKien.Ngay = prompt("Nhập ngày:");
-        suKien.ThoiGianBatDau = prompt("Nhập thời gian bắt đầu:");
-        suKien.ThoiGianKetThuc = prompt("Nhập thời gian kết thúc:");
-        suKien.TenSuKien = prompt("Nhập tên sự kiện:");
-        suKien.ChiTietSuKien = prompt("Nhập chi tiết sự kiện:");
-        suKien.QuanTrong = prompt("Sự kiện có quan trọng không? (Có/Không):");
+    const suKien = nhapThongTinSuKien();
+    
+    const kiemTra = duLieuNgoai.find(event =>
+        event.Thang === suKien.Thang &&
+        event.Tuan === suKien.Tuan &&
+        event.Ngay === suKien.Ngay &&
+        event.TenSuKien === suKien.TenSuKien
+    );
 
-        const kiemTra = duLieuNgoai.find(event =>
-            event.Thang === suKien.Thang &&
-            event.Tuan === suKien.Tuan &&
-            event.Ngay === suKien.Ngay &&
-            event.TenSuKien === suKien.TenSuKien
-        );
-
-        if (kiemTra) {
-            console.log(`Sự kiện '${suKien.TenSuKien}' đã tồn tại vào ngày này.`);
-            const luaChon = prompt("Bạn muốn hợp nhất sự kiện không? (Có/Không):").trim().toLowerCase();
-            if (luaChon === "có") {
-                kiemTra.ChiTietSuKien += " | " + suKien.ChiTietSuKien;
-                kiemTra.ThoiGianBatDau = Math.min(kiemTra.ThoiGianBatDau, suKien.ThoiGianBatDau);
-                kiemTra.ThoiGianKetThuc = Math.max(kiemTra.ThoiGianKetThuc, suKien.ThoiGianKetThuc);
-                kiemTra.QuanTrong = kiemTra.QuanTrong === "Có" || suKien.QuanTrong === "Có" ? "Có" : "Không";
-                console.log("Sự kiện đã được hợp nhất.");
-            } else {
-                console.log("Sự kiện không được thêm.");
-            }
+    if (kiemTra) {
+        console.log(`Sự kiện '${suKien.TenSuKien}' đã tồn tại.`);
+        const luaChon = prompt("Bạn muốn hợp nhất sự kiện không? (Có/Không):").trim().toLowerCase();
+        if (luaChon === "có") {
+            kiemTra.ChiTietSuKien += " | " + suKien.ChiTietSuKien;
+            kiemTra.QuanTrong = kiemTra.QuanTrong === "Có" || suKien.QuanTrong === "Có" ? "Có" : "Không";
+            console.log("Sự kiện đã được hợp nhất.");
         } else {
-            duLieuNgoai.push(suKien);
-            console.log(`\nSự kiện '${suKien.TenSuKien}' đã được thêm vào lịch trình.\n`);
+            console.log("Sự kiện không được thêm.");
         }
-
-        const tiepTuc = prompt("Bạn có muốn thêm sự kiện khác không? (nhập 'end' để thoát):").trim().toLowerCase();
-        if (tiepTuc === "end") break;
+    } else {
+        duLieuNgoai.push(suKien);
+        console.log(`Sự kiện '${suKien.TenSuKien}' đã được thêm.`);
     }
+    luuDuLieu();
 }
 
 function xemLichTrinh() {
     if (duLieuNgoai.length === 0) {
-        console.log("Không có sự kiện nào được lên lịch.");
-    } else {
-        duLieuNgoai.forEach((suKien, index) => {
-            console.log(`--- Sự kiện ${index + 1} ---`);
-            console.log(`Tháng: ${suKien.Thang}`);
-            console.log(`Tuần: ${suKien.Tuan}`);
-            console.log(`Ngày: ${suKien.Ngay}`);
-            console.log(`Thời gian bắt đầu: ${suKien.ThoiGianBatDau}`);
-            console.log(`Thời gian kết thúc: ${suKien.ThoiGianKetThuc}`);
-            console.log(`Tên sự kiện: ${suKien.TenSuKien}`);
-            console.log(`Chi tiết sự kiện: ${suKien.ChiTietSuKien}`);
-            console.log(`Quan trọng: ${suKien.QuanTrong}`);
-            console.log();
-        });
+        console.log("Không có sự kiện nào.");
+        return;
     }
+    duLieuNgoai.forEach((suKien, index) => {
+        console.log(`(${index + 1}) ${suKien.TenSuKien} - ${suKien.Ngay}/${suKien.Thang} [${suKien.QuanTrong}]`);
+    });
 }
 
 function suaSuKien() {
-    if (duLieuNgoai.length === 0) {
-        console.log("Không có sự kiện nào để sửa.");
+    const tenSuKien = prompt("Nhập tên sự kiện cần sửa:").trim();
+    const suKien = duLieuNgoai.find(event => event.TenSuKien.toLowerCase() === tenSuKien.toLowerCase());
+    if (!suKien) {
+        console.log("Không tìm thấy sự kiện.");
         return;
     }
+    console.log("Chỉnh sửa sự kiện:");
+    Object.assign(suKien, nhapThongTinSuKien());
+    luuDuLieu();
+    console.log("Sự kiện đã được cập nhật.");
+}
 
-    const thang = prompt("Nhập tháng của sự kiện cần sửa:");
-    const tuan = prompt("Nhập tuần của sự kiện cần sửa:");
-    const ngay = prompt("Nhập ngày của sự kiện cần sửa:");
-
-    const foundEvents = duLieuNgoai.filter(event =>
-        event.Thang === thang && event.Tuan === tuan && event.Ngay === ngay
+function timKiemSuKien() {
+    const tuKhoa = prompt("Nhập từ khóa để tìm kiếm:").trim().toLowerCase();
+    const ketQua = duLieuNgoai.filter(event =>
+        event.TenSuKien.toLowerCase().includes(tuKhoa) ||
+        event.ChiTietSuKien.toLowerCase().includes(tuKhoa)
     );
-
-    if (foundEvents.length === 0) {
-        console.log("Không tìm thấy sự kiện nào vào ngày này.");
-        return;
-    }
-
-    console.log("\nCác sự kiện trong ngày đã chọn:");
-    foundEvents.forEach((event, index) => {
-        console.log(`${index + 1}. ${event.TenSuKien}`);
-    });
-
-    const index = parseInt(prompt("Chọn số của sự kiện bạn muốn chỉnh sửa:")) - 1;
-    if (isNaN(index) || index < 0 || index >= foundEvents.length) {
-        console.log("Lựa chọn không hợp lệ.");
-        return;
-    }
-
-    const event = foundEvents[index];
-
-    console.log("\nChọn tùy chọn:");
-    console.log("1. Thêm công việc.");
-    console.log("2. Chỉnh sửa công việc.");
-    console.log("3. Xóa công việc.");
-    const luaChon = prompt("Chọn tùy chọn (1/2/3):");
-    if (luaChon === "1") {
-        event.ChiTietSuKien += " | " + prompt("Nhập chi tiết công việc mới:");
-        console.log("Công việc đã được thêm.");
-    } else if (luaChon === "2") {
-        event.ThoiGianBatDau = prompt("Nhập thời gian bắt đầu mới:");
-        event.ThoiGianKetThuc = prompt("Nhập thời gian kết thúc mới:");
-        event.ChiTietSuKien = prompt("Nhập chi tiết sự kiện mới:");
-        event.QuanTrong = prompt("Sự kiện này có quan trọng không? (Có/Không):");
-        console.log("Sự kiện đã được chỉnh sửa.");
-    } else if (luaChon === "3") {
-        const indexToDelete = duLieuNgoai.indexOf(event);
-        duLieuNgoai.splice(indexToDelete, 1);
-        console.log("Sự kiện đã bị xóa.");
+    if (ketQua.length === 0) {
+        console.log("Không tìm thấy sự kiện nào phù hợp.");
     } else {
-        console.log("Tùy chọn không hợp lệ.");
+        ketQua.forEach(event => console.log(`${event.TenSuKien} - ${event.Ngay}/${event.Thang}`));
+    }
+}
+
+function xoaTatCaSuKien() {
+    const xacNhan = prompt("Bạn có chắc chắn muốn xóa tất cả sự kiện không? (Có/Không):").trim().toLowerCase();
+    if (xacNhan === "có") {
+        duLieuNgoai.length = 0;
+        luuDuLieu();
+        console.log("Tất cả sự kiện đã bị xóa.");
     }
 }
 
 while (true) {
     hienThiMenu();
-    const luaChon = prompt("Chọn một tùy chọn (1/2/3/4):");
-    if (luaChon === "1") {
-        themSuKienVaoThoiKhoaBieu();
-    } else if (luaChon === "2") {
-        xemLichTrinh();
-    } else if (luaChon === "3") {
-        suaSuKien();
-    } else if (luaChon === "4") {
-        break;
-    } else {
-        console.log("Lựa chọn không hợp lệ, vui lòng chọn lại.");
-    }
+    const luaChon = prompt("Chọn một tùy chọn (1-6):").trim();
+    if (luaChon === "1") themSuKienVaoThoiKhoaBieu();
+    else if (luaChon === "2") xemLichTrinh();
+    else if (luaChon === "3") suaSuKien();
+    else if (luaChon === "4") timKiemSuKien();
+    else if (luaChon === "5") xoaTatCaSuKien();
+    else if (luaChon === "6") break;
+    else console.log("Lựa chọn không hợp lệ.");
 }
