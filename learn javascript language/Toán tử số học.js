@@ -70,63 +70,10 @@
 
 // 10 Bài tập vận dụng đủ dạng toán tử số học  
 
-// 1. Bài tập 1: 
-//    Viết chương trình cộng hai số bất kỳ do người dùng nhập vào.  
-let a = parseFloat(prompt("Nhập số thứ nhất:"));
-let b = parseFloat(prompt("Nhập số thứ hai:"));
-console.log("Tổng hai số là:", a + b);
-
-// 2. Bài tập 2:  
-//    Nhập một số và tính bình phương của nó.  
-let num = parseFloat(prompt("Nhập một số:"));
-console.log("Bình phương là:", num ** 2);
-
-// 3. Bài tập 3:  
-//    Tính thương và phần dư khi chia hai số.  
-let dividend = parseFloat(prompt("Nhập số bị chia:"));
-let divisor = parseFloat(prompt("Nhập số chia:"));
-console.log("Thương là:", dividend / divisor);
-console.log("Phần dư là:", dividend % divisor);
-
-// 4. Bài tập 4: 
-//    Tăng giá trị một biến số lên 1 đơn vị, sau đó giảm đi 1 đơn vị, và in kết quả.  
-let count = 5;
-console.log("Giá trị ban đầu:", count);
-count++;
-console.log("Sau khi tăng:", count);
-count--;
-console.log("Sau khi giảm:", count);
-
-// 5. Bài tập 5: 
-//    Viết chương trình nhập 3 cạnh của tam giác và tính chu vi của nó.  
-let sideA = parseFloat(prompt("Nhập cạnh a:"));
-let sideB = parseFloat(prompt("Nhập cạnh b:"));
-let sideC = parseFloat(prompt("Nhập cạnh c:"));
-console.log("Chu vi tam giác là:", sideA + sideB + sideC);
-
-// 6. Bài tập 6:  
-//    Nhập chiều dài và chiều rộng của một hình chữ nhật, tính diện tích và chu vi.  
-let length = parseFloat(prompt("Nhập chiều dài:"));
-let width = parseFloat(prompt("Nhập chiều rộng:"));
-console.log("Diện tích:", length * width);
-console.log("Chu vi:", 2 * (length + width));
-
-// 7. Bài tập 7: 
-//    Kiểm tra một số có phải là số chẵn hay không.  
-let checkNum = parseInt(prompt("Nhập một số:"));
-console.log(checkNum % 2 === 0 ? "Là số chẵn" : "Không phải số chẵn");
-
-// 8. Bài tập 8: 
-//    Viết chương trình nhập điểm 3 môn học và tính trung bình.  
-let math = parseFloat(prompt("Nhập điểm Toán:"));
-let physics = parseFloat(prompt("Nhập điểm Lý:"));
-let chemistry = parseFloat(prompt("Nhập điểm Hóa:"));
-console.log("Điểm trung bình:", (math + physics + chemistry) / 3);
-
-// 9. Bài tập 9:  
-//    Viết chương trình để chuyển đổi từ độ C sang độ F. Công thức: `F = C * 9/5 + 32`.  
-let celsius = parseFloat(prompt("Nhập nhiệt độ (°C):"));
-console.log("Nhiệt độ (°F):", celsius * 9 / 5 + 32);
-
 // 10. Bài tập 10:
 //     Tính số tiền lãi đơn sau một thời gian
+let principal = parseFloat(prompt("Nhập số tiền gốc: "));
+let rate = parseFloat(prompt("Nhập lãi suất (% mỗi năm): ")) / 100;
+let time = parseFloat(prompt("Nhập thời gian (năm): "));
+let interest = principal * rate * time;
+console.log("Số tiền lãi sau", time, "năm là:", interest);
