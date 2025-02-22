@@ -1,101 +1,173 @@
-// Bài 1: Tính tổng hai số
-console.log("=== Bài 1: Tính tổng hai số ===");
-const a = 5, b = 10;
-console.log(`Tổng của a và b là: ${a + b}`);
-const c = Number(prompt("Nhập vào số thứ nhất (a):"));
-const d = Number(prompt("Nhập vào số thứ hai (b):"));
-if (isNaN(c) || isNaN(d)) {
-    console.log("Vui lòng nhập số hợp lệ!");
-} else {
-    console.log(`Tổng của hai số bạn nhập là: ${c + d}`);
+// Bài 1: Viết hàm tính tổng hai số
+// Tách phần tính tổng thành một hàm riêng, xử lý nhập số hợp lệ.
+
+function sum(a, b) {
+    return a + b;
 }
-console.log("\n");
+
+function getTwoNumbersAndSum() {
+    let a = parseFloat(prompt("Nhập số thứ nhất:"));
+    let b = parseFloat(prompt("Nhập số thứ hai:"));
+
+    if (isNaN(a) || isNaN(b)) {
+        console.log("Vui lòng nhập số hợp lệ!");
+    } else {
+        console.log(`Tổng của ${a} và ${b} là: ${sum(a, b)}`);
+    }
+}
+
+getTwoNumbersAndSum();
+
+
+
 
 // Bài 2: Kiểm tra số chẵn lẻ
-console.log("=== Bài 2: Kiểm tra số chẵn lẻ ===");
-const s = Number(prompt("Nhập vào một số:"));
-if (isNaN(s)) {
-    console.log("Vui lòng nhập một số hợp lệ!");
-} else {
-    console.log(`${s} là số ${s % 2 === 0 ? "chẵn" : "lẻ"}.`);
+// Sử dụng hàm để kiểm tra và hiển thị kết quả.
+
+function isEven(n) {
+    return n % 2 === 0;
 }
-console.log("\n");
+
+function checkEvenOdd() {
+    let n = parseInt(prompt("Nhập một số nguyên:"));
+
+    if (isNaN(n)) {
+        console.log("Vui lòng nhập số hợp lệ!");
+    } else {
+        console.log(`${n} là số ${isEven(n) ? "chẵn" : "lẻ"}.`);
+    }
+}
+
+checkEvenOdd();
+
+
+
 
 // Bài 3: Tính giai thừa
-console.log("=== Bài 3: Tính giai thừa ===");
-const v = Number(prompt("Nhập vào một số nguyên dương:"));
-if (isNaN(v) || v < 0) {
-    console.log("Vui lòng nhập một số nguyên dương hợp lệ!");
-} else {
-    let factorial = 1;
-    for (let i = 1; i <= v; i++) factorial *= i;
-    console.log(`Giai thừa của ${v} là: ${factorial}`);
+// Sử dụng vòng lặp `for` thay vì đệ quy để tối ưu hiệu suất.
+
+function factorial(n) {
+    let result = 1;
+    for (let i = 2; i <= n; i++) result *= i;
+    return result;
 }
-console.log("\n");
+
+function calculateFactorial() {
+    let n = parseInt(prompt("Nhập số nguyên dương:"));
+
+    if (isNaN(n) || n < 0) {
+        console.log("Vui lòng nhập một số nguyên dương!");
+    } else {
+        console.log(`Giai thừa của ${n} là: ${factorial(n)}`);
+    }
+}
+
+calculateFactorial();
+
+
+
 
 // Bài 4: In các số chẵn từ 1 đến 20
-console.log("=== Bài 4: In các số chẵn từ 1 đến 20 ===");
-for (let i = 2; i <= 20; i += 2) console.log(i);
-console.log("\n");
+// Dùng `Array.from()` để tạo danh sách nhanh hơn.
+
+console.log("Các số chẵn từ 1 đến 20:", Array.from({length: 10}, (_, i) => (i + 1) * 2).join(", "));
+
 
 // Bài 5: Kiểm tra mật khẩu
-console.log("=== Bài 5: Kiểm tra mật khẩu ===");
-const password = prompt("Nhập mật khẩu:");
-console.log(password === "javascript" ? "Mật khẩu đúng." : "Mật khẩu sai.");
-console.log("\n");
+// Sử dụng `trim()` để loại bỏ khoảng trắng không cần thiết.
+
+function checkPassword() {
+    const correctPassword = "javascript";
+    let input = prompt("Nhập mật khẩu:").trim();
+
+    console.log(input === correctPassword ? "Mật khẩu đúng." : "Mật khẩu sai.");
+}
+
+checkPassword();
 
 // Bài 6: Tính diện tích hình tròn
-console.log("=== Bài 6: Tính diện tích hình tròn ===");
-const r = 7;
-console.log(`Diện tích hình tròn bán kính ${r} là: ${(Math.PI * r ** 2).toFixed(2)}`);
-console.log("\n");
+// Fix lỗi nhân `Math.PI * r  2` thành `Math.PI * r * r`.
+
+function calculateCircleArea(r) {
+    return (Math.PI * r * r).toFixed(2);
+}
+
+console.log(`Diện tích hình tròn bán kính 7 là: ${calculateCircleArea(7)}`);
+
 
 // Bài 7: Kiểm tra năm nhuận
-console.log("=== Bài 7: Kiểm tra năm nhuận ===");
-const year = Number(prompt("Nhập vào một năm:"));
-if (isNaN(year)) {
-    console.log("Vui lòng nhập một năm hợp lệ!");
-} else {
-    const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-    console.log(`${year} là năm ${isLeapYear ? "nhuận" : "không phải năm nhuận"}.`);
+// Viết hàm kiểm tra năm nhuận.
+
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
 }
-console.log("\n");
+
+function checkLeapYear() {
+    let year = parseInt(prompt("Nhập một năm:"));
+
+    if (isNaN(year)) {
+        console.log("Vui lòng nhập một năm hợp lệ!");
+    } else {
+        console.log(`${year} là năm ${isLeapYear(year) ? "nhuận" : "không nhuận"}.`);
+    }
+}
+
+checkLeapYear();
 
 // Bài 8: Kiểm tra số nguyên tố
-console.log("=== Bài 8: Kiểm tra số nguyên tố ===");
-const num = Number(prompt("Nhập vào một số nguyên dương:"));
-if (isNaN(num) || num < 2) {
-    console.log("Vui lòng nhập một số nguyên dương lớn hơn hoặc bằng 2!");
-} else {
-    let isPrime = true;
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i === 0) {
-            isPrime = false;
-            break;
-        }
+// Sử dụng tối ưu kiểm tra số nguyên tố.
+
+function isPrime(n) {
+    if (n < 2) return false;
+    if (n === 2) return true;
+    if (n % 2 === 0) return false;
+
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+        if (n % i === 0) return false;
     }
-    console.log(`${num} ${isPrime ? "là" : "không phải là"} số nguyên tố.`);
+    return true;
 }
-console.log("\n");
+
+function checkPrimeNumber() {
+    let num = parseInt(prompt("Nhập số nguyên dương:"));
+
+    if (isNaN(num) || num < 2) {
+        console.log("Vui lòng nhập số nguyên dương lớn hơn hoặc bằng 2!");
+    } else {
+        console.log(`${num} ${isPrime(num) ? "là" : "không phải là"} số nguyên tố.`);
+    }
+}
+
+checkPrimeNumber();
 
 // Bài 9: Tính tổng các số chẵn từ 1 đến n
-console.log("=== Bài 9: Tính tổng các số chẵn từ 1 đến n ===");
-const n = Number(prompt("Nhập vào số nguyên dương n:"));
-if (isNaN(n) || n <= 0) {
-    console.log("Vui lòng nhập một số nguyên dương hợp lệ!");
-} else {
-    let sumEven = 0;
-    for (let i = 2; i <= n; i += 2) sumEven += i;
-    console.log(`Tổng các số chẵn từ 1 đến ${n} là: ${sumEven}`);
-}
-console.log("\n");
+// Sử dụng công thức tính nhanh tổng số chẵn.
 
-// Bài 10: In bảng cửu chương từ 1 đến 10
-console.log("=== Bài 10: In bảng cửu chương từ 1 đến 10 ===");
-for (let i = 1; i <= 10; i++) {
-    console.log(`--- Bảng cửu chương ${i} ---`);
-    for (let j = 1; j <= 10; j++) {
-        console.log(`${i} x ${j} = ${i * j}`);
-    }
-    console.log("--------------------------");
+function sumEvenNumbers(n) {
+    let lastEven = n % 2 === 0 ? n : n - 1;
+    return (lastEven / 2) * (lastEven / 2 + 1);
 }
+
+function calculateSumEven() {
+    let n = parseInt(prompt("Nhập số nguyên dương:"));
+
+    if (isNaN(n) || n <= 0) {
+        console.log("Vui lòng nhập số hợp lệ!");
+    } else {
+        console.log(`Tổng các số chẵn từ 1 đến ${n} là: ${sumEvenNumbers(n)}`);
+    }
+}
+
+calculateSumEven();
+
+// Bài 10: In bảng cửu chương
+// Sử dụng `map()` và `join()` để tối ưu việc hiển thị.
+
+function printMultiplicationTable() {
+    for (let i = 1; i <= 10; i++) {
+        console.log(`\nBảng cửu chương ${i}`);
+        console.log(Array.from({length: 10}, (_, j) => `${i} x ${j + 1} = ${i * (j + 1)}`).join("\n"));
+    }
+}
+
+printMultiplicationTable();
