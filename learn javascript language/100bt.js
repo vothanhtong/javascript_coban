@@ -171,3 +171,196 @@ function printMultiplicationTable() {
 }
 
 printMultiplicationTable();
+
+// Bài 11: Tính tổng các chữ số của một số nguyên dương
+function sumOfDigits(n) {
+    return n.toString().split('').reduce((sum, digit) => sum + parseInt(digit), 0);
+}
+
+function getSumOfDigits() {
+    let n = parseInt(prompt("Nhập số nguyên dương:"));
+    if (isNaN(n) || n <= 0) {
+        console.log("Vui lòng nhập số nguyên dương hợp lệ!");
+    } else {
+        console.log(`Tổng các chữ số của ${n} là: ${sumOfDigits(n)}`);
+    }
+}
+
+getSumOfDigits();
+
+
+// Bài 12: Tìm số Fibonacci thứ n
+function fibonacci(n) {
+    let a = 0, b = 1;
+    for (let i = 2; i <= n; i++) {
+        [a, b] = [b, a + b];
+    }
+    return n === 0 ? a : b;
+}
+
+function getFibonacci() {
+    let n = parseInt(prompt("Nhập số nguyên dương:"));
+    if (isNaN(n) || n < 0) {
+        console.log("Vui lòng nhập số nguyên không âm!");
+    } else {
+        console.log(`Số Fibonacci thứ ${n} là: ${fibonacci(n)}`);
+    }
+}
+
+getFibonacci();
+
+
+// Bài 13: Đảo ngược số nguyên
+function reverseNumber(n) {
+    return parseInt(n.toString().split('').reverse().join(''));
+}
+
+function getReversedNumber() {
+    let n = parseInt(prompt("Nhập số nguyên:"));
+    if (isNaN(n)) {
+        console.log("Vui lòng nhập số hợp lệ!");
+    } else {
+        console.log(`Số đảo ngược của ${n} là: ${reverseNumber(n)}`);
+    }
+}
+
+getReversedNumber();
+
+
+// Bài 14: Kiểm tra số đối xứng (Palindrome Number)
+function isPalindromeNumber(n) {
+    let str = n.toString();
+    return str === str.split('').reverse().join('');
+}
+
+function checkPalindromeNumber() {
+    let n = parseInt(prompt("Nhập số nguyên:"));
+    if (isNaN(n)) {
+        console.log("Vui lòng nhập số hợp lệ!");
+    } else {
+        console.log(`${n} ${isPalindromeNumber(n) ? "là" : "không phải"} số đối xứng.`);
+    }
+}
+
+checkPalindromeNumber();
+
+
+// Bài 15: In tam giác số Pascal
+function generatePascalsTriangle(rows) {
+    let triangle = [[1]];
+    for (let i = 1; i < rows; i++) {
+        let prevRow = triangle[i - 1];
+        let newRow = [1];
+        for (let j = 1; j < prevRow.length; j++) {
+            newRow.push(prevRow[j - 1] + prevRow[j]);
+        }
+        newRow.push(1);
+        triangle.push(newRow);
+    }
+    return triangle;
+}
+
+function printPascalsTriangle() {
+    let rows = parseInt(prompt("Nhập số hàng của tam giác Pascal:"));
+    if (isNaN(rows) || rows <= 0) {
+        console.log("Vui lòng nhập số nguyên dương!");
+    } else {
+        console.log("Tam giác Pascal:");
+        generatePascalsTriangle(rows).forEach(row => console.log(row.join(" ")));
+    }
+}
+
+printPascalsTriangle();
+
+
+// Bài 16: Tìm số lớn thứ hai trong mảng
+function secondLargest(arr) {
+    let uniqueSorted = [...new Set(arr)].sort((a, b) => b - a);
+    return uniqueSorted.length > 1 ? uniqueSorted[1] : null;
+}
+
+function findSecondLargest() {
+    let arr = prompt("Nhập mảng số nguyên (cách nhau bằng dấu phẩy):")
+        .split(",")
+        .map(Number);
+    
+    let result = secondLargest(arr);
+    console.log(result !== null ? `Số lớn thứ hai là: ${result}` : "Không có số lớn thứ hai hợp lệ.");
+}
+
+findSecondLargest();
+
+
+// Bài 17: Kiểm tra một số có phải số hoàn hảo (Perfect Number) không
+function isPerfectNumber(n) {
+    let sum = 0;
+    for (let i = 1; i <= n / 2; i++) {
+        if (n % i === 0) sum += i;
+    }
+    return sum === n;
+}
+
+function checkPerfectNumber() {
+    let n = parseInt(prompt("Nhập số nguyên dương:"));
+    if (isNaN(n) || n <= 0) {
+        console.log("Vui lòng nhập số nguyên dương!");
+    } else {
+        console.log(`${n} ${isPerfectNumber(n) ? "là" : "không phải là"} số hoàn hảo.`);
+    }
+}
+
+checkPerfectNumber();
+
+
+// Bài 18: Chuyển đổi số thập phân sang nhị phân
+function decimalToBinary(n) {
+    return n.toString(2);
+}
+
+function convertDecimalToBinary() {
+    let n = parseInt(prompt("Nhập số nguyên dương:"));
+    if (isNaN(n) || n < 0) {
+        console.log("Vui lòng nhập số nguyên dương hợp lệ!");
+    } else {
+        console.log(`Số nhị phân của ${n} là: ${decimalToBinary(n)}`);
+    }
+}
+
+convertDecimalToBinary();
+
+
+// Bài 19: Đếm số nguyên tố trong một khoảng
+function countPrimesInRange(start, end) {
+    let count = 0;
+    for (let i = start; i <= end; i++) {
+        if (isPrime(i)) count++;
+    }
+    return count;
+}
+
+function getPrimeCount() {
+    let start = parseInt(prompt("Nhập số bắt đầu:"));
+    let end = parseInt(prompt("Nhập số kết thúc:"));
+
+    if (isNaN(start) || isNaN(end) || start > end) {
+        console.log("Vui lòng nhập khoảng hợp lệ!");
+    } else {
+        console.log(`Số lượng số nguyên tố trong khoảng ${start}-${end} là: ${countPrimesInRange(start, end)}`);
+    }
+}
+
+getPrimeCount();
+
+
+// Bài 20: Kiểm tra chuỗi đối xứng (Palindrome String)
+function isPalindromeString(str) {
+    let cleanStr = str.replace(/\s+/g, "").toLowerCase();
+    return cleanStr === cleanStr.split('').reverse().join('');
+}
+
+function checkPalindromeString() {
+    let str = prompt("Nhập chuỗi:").trim();
+    console.log(`"${str}" ${isPalindromeString(str) ? "là" : "không phải"} chuỗi đối xứng.`);
+}
+
+checkPalindromeString();
