@@ -177,4 +177,4 @@ function checkFirstCharacter() {
     console.log("Ký tự đầu tiên là ký tự đặc biệt");
   }
 }
-checkFirstCharacter();
+checkFirstCharacter(); 
