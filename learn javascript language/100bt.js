@@ -515,6 +515,5 @@ function checkArmstrong() {
         alert(`${num} ${isArmstrong(num) ? "là" : "không phải là"} số Armstrong.`);
     }
 }
-
 checkArmstrong();
 
