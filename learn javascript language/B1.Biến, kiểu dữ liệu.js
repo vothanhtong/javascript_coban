@@ -84,3 +84,5 @@ const checkFirstCharacter = () => {
     : "Ký tự đặc biệt"); // Xác định loại ký tự
 };
 checkFirstCharacter();
+// .
+
