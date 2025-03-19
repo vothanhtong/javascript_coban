@@ -5,7 +5,6 @@ const printPersonalInfo = () => {
   console.log(`Tên: ${name}\nTuổi: ${age}\nQuốc gia: ${country}`); // In ra màn hình
 };
 printPersonalInfo();
-
 // 2. Tính tổng các chữ số của số nguyên có ba chữ số
 const sumOfDigits = () => {
   console.log("\n=== Bài 2: Tính tổng các chữ số ===");
@@ -15,7 +14,6 @@ const sumOfDigits = () => {
   console.log(`Tổng: ${[...String(number)].reduce((sum, d) => sum + +d, 0)}`); // Tính tổng chữ số
 };
 sumOfDigits();
-
 // 3. Chuyển đổi nhiệt độ từ Celsius sang Fahrenheit
 const convertTemperature = () => {
   console.log("\n=== Bài 3: Chuyển đổi nhiệt độ ===");
@@ -24,7 +22,6 @@ const convertTemperature = () => {
     : `${celsius}°C = ${(celsius * 9 / 5 + 32).toFixed(2)}°F`); // Chuyển đổi và hiển thị
 };
 convertTemperature();
-
 // 4. So sánh hai số nhập vào
 const compareTwoNumbers = () => {
   console.log("\n=== Bài 4: So sánh hai số ===");
@@ -34,7 +31,6 @@ const compareTwoNumbers = () => {
     : `${Math.max(num1, num2)} lớn hơn ${Math.min(num1, num2)}.`); // So sánh và hiển thị kết quả
 };
 compareTwoNumbers();
-
 // 5. Tính chu vi và diện tích hình tròn từ bán kính nhập vào
 const circleCalculations = () => {
   console.log("\n=== Bài 5: Chu vi & Diện tích hình tròn ===");
@@ -45,7 +41,6 @@ const circleCalculations = () => {
     console.log("Bán kính không hợp lệ."); // Kiểm tra bán kính hợp lệ
 };
 circleCalculations();
-
 // 6. Kiểm tra số nguyên tố
 const checkPrime = () => {
   console.log("\n=== Bài 6: Kiểm tra số nguyên tố ===");
@@ -55,7 +50,6 @@ const checkPrime = () => {
     : "Không phải số nguyên tố."); // Kiểm tra số nguyên tố
 };
 checkPrime();
-
 // 7. Hiển thị thông tin sản phẩm sử dụng object
 const productInfo = () => {
   console.log("\n=== Bài 7: Thông tin sản phẩm ===");
@@ -63,7 +57,6 @@ const productInfo = () => {
   console.table(product); // Hiển thị sản phẩm dưới dạng bảng
 };
 productInfo();
-
 // 8. Tính điểm trung bình của 3 môn học và xếp loại
 const calculateAverageGrade = () => {
   console.log("\n=== Bài 8: Tính điểm trung bình ===");
@@ -73,7 +66,6 @@ const calculateAverageGrade = () => {
     : `Điểm TB: ${avg.toFixed(2)} - Xếp loại: ${avg >= 9 ? "Xuất sắc" : avg >= 7 ? "Giỏi" : avg >= 5 ? "Trung bình" : "Yếu"}`);
 };
 calculateAverageGrade();
-
 // 9. Hoán đổi giá trị hai biến mà không dùng biến tạm
 const swapValues = () => {
   console.log("\n=== Bài 9: Hoán đổi giá trị hai biến ===");
@@ -82,7 +74,6 @@ const swapValues = () => {
   console.log(`Sau khi hoán đổi: a = ${a}, b = ${b}`); // Hiển thị kết quả
 };
 swapValues();
-
 // 10. Kiểm tra ký tự đầu tiên của chuỗi nhập vào
 const checkFirstCharacter = () => {
   console.log("\n=== Bài 10: Kiểm tra ký tự đầu tiên ===");
