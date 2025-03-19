@@ -34,11 +34,7 @@ function checkEvenOdd() {
         console.log(`${n} là số ${isEven(n) ? "chẵn" : "lẻ"}.`);
     }
 }
-
 checkEvenOdd();
-
-
-
 
 // Bài 3: Tính giai thừa
 // Sử dụng vòng lặp `for` thay vì đệ quy để tối ưu hiệu suất.
