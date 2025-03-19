@@ -18,9 +18,6 @@ function getTwoNumbersAndSum() {
 
 getTwoNumbersAndSum();
 
-
-
-
 // Bài 2: Kiểm tra số chẵn lẻ
 // Sử dụng hàm để kiểm tra và hiển thị kết quả.
 
